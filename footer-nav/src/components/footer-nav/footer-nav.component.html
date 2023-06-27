@@ -1,0 +1,10 @@
+<nav role="navigation" araia-label="Footer navigation" class="annuFooterNav container">
+    <ul class="row-lg middle">
+        <li *ngIf="copyrightText" class="annuFooterNav_copyright spacing-horizontal"><small>{{copyrightText}}</small>
+        </li>
+        <li *ngFor="let item of items">
+            <a class="spacing-horizontal" [routerLink]="item.href" routerLinkActive="active"
+                (click)="itemCliked(item)">{{item.title}}</a>
+        </li>
+    </ul>
+</nav>

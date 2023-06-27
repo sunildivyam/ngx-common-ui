@@ -20,5 +20,13 @@
   "dependencies": {
     "tslib": "^2.3.0"
   },
+  "exports": {
+    "./scss": {
+      "mixins.scss": "./scss/_mixins.scss",
+      "colors.scss": "./scss/_colors.scss",
+      "annu-ng-lib-theme.scss": "./scss/_annu-ng-lib-theme.scss",
+      "normalize.scss": "./scss/normalize.scss"
+    }
+  },
   "sideEffects": false
 }

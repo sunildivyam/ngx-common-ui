@@ -1,0 +1,39 @@
+@import '_mixins';
+
+:host {
+
+    .separator {
+        list-style: none;
+        margin-left: -1.5rem;
+        padding: 0 0.5rem;
+    }
+
+    li {
+        margin: 0.5rem 0;
+    }
+
+    &.aside-nav-collapsible {
+        &.aside-nav-opened {
+            .aside-nav-header {
+                display: none !important;
+            }
+        }
+
+        .aside-nav-header-non-collapsible {
+            display: none !important;
+        }
+
+        .aside-nav-header-inside-drawer {
+            display: flex;
+        }
+
+        .aside-nav-header {
+            display: flex;
+        }
+    }
+
+    .aside-nav-header-inside-drawer,
+    .aside-nav-header {
+        display: none;
+    }
+}

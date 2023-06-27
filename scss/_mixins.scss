@@ -1,0 +1,109 @@
+// Breakpoints
+$large-breakpoint: 1024px !default;        // 64em !default;
+$medium-breakpoint: 768px !default;         // 42em !default;
+$error: red;
+$warning: orange;
+$success: green;
+$error-hover: rgb(196, 9, 9);
+$warning-hover: rgb(243, 170, 34);
+$success-hover: rgb(18, 156, 18);
+$menu-z-index: 1000;
+$aside-nav-z-index: 900;
+$menu-modal: 9000;
+$opacity: 0.92;
+$checkbox_size: 1.5rem;
+$md-spacing: calc(var(--anu-spacing)/3);
+$sm-sapcing: calc(var(--anu-spacing)/4);
+
+@mixin large {
+  @media screen and (min-width: #{$large-breakpoint}) {
+    @content;
+  }
+}
+
+@mixin medium {
+  @media screen and (min-width: #{$medium-breakpoint}) and (max-width: #{$large-breakpoint - 1}) {
+    @content;
+  }
+}
+
+@mixin small {
+  @media screen and (max-width: #{$medium-breakpoint - 1}) {
+    @content;
+  }
+}
+
+@function boxSize($i) {
+  @return calc($i * 100%/12);
+}
+
+@mixin row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+@mixin col($i) {
+  display: flex;
+  flex-direction: column;
+  width: calc(boxSize($i) - 1rem);
+  margin: 0.5rem;
+}
+
+@mixin box-sizes {
+  &-1 {
+    @include col(1);
+  }
+
+  &-2 {
+    @include col(2);
+  }
+
+  &-3 {
+    @include col(3);
+  }
+
+  &-4 {
+    @include col(4);
+  }
+
+  &-5 {
+    @include col(5);
+  }
+
+  &-6 {
+    @include col(6);
+  }
+  &-7 {
+    @include col(7);
+  }
+  &-8 {
+    @include col(8);
+  }
+  &-9 {
+    @include col(9);
+  }
+  &-10 {
+    @include col(10);
+  }
+  &-11 {
+    @include col(11);
+  }
+  &-12 {
+    @include col(12);
+  }
+}
+
+// conteneteditable styles
+@mixin contenteditableStyle {
+  &[contenteditable] {
+    padding-left: 0.5rem;
+    border-left: 2px solid transparent;
+
+    &:focus-visible {
+      outline: none;
+      border-left-color: var(--anu-primary-normal);
+    }
+  }
+}

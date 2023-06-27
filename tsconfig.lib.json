@@ -6,7 +6,15 @@
     "declaration": true,
     "declarationMap": true,
     "inlineSources": true,
-    "types": []
+    "types": [],
+    "paths": {
+      "@annuadvent/ngx-core": [
+        "dist/ngx-core"
+      ],
+      "@annuadvent/ngx-core/*": [
+        "dist/ngx-core/*"
+      ],
+    }
   },
   "exclude": [
     "**/*.spec.ts"
