@@ -1,0 +1,39 @@
+@import '_mixins';
+
+:host {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        li {
+            @include small {
+                margin-top: 1rem;
+                border: none;
+                text-align: center;
+            }
+
+            @include medium {
+                margin-top: 1rem;
+                border: none;
+                text-align: center;
+            }
+        }
+
+        li+li {
+            border-left: 1px solid var(--anu-accent-lighter);
+
+            @include small {
+                border: none;
+            }
+
+            @include medium {
+                border: none;
+            }
+        }
+    }
+}

@@ -1,0 +1,10 @@
+<section class="annuThemePicker">
+  <a class="btn" 
+  href="javascript:void(0)" 
+  *ngFor="let theme of themeService.themes" 
+  [ngStyle]="{backgroundColor: themeService.getThemeColor(theme)}"
+  (click)="themeSelected(theme.name)"
+  [ngClass]="{'active': theme.name === selectedTheme}"
+  [title]="theme.title"> </a>
+  <anu-toggle [rounded]="true" (changed)="invert($event)" title="Invert Theme Colors"></anu-toggle>
+</section>

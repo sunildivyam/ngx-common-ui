@@ -1,8 +1,17 @@
 {
   "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
   "dest": "../../dist/ngx-common-ui",
+  "assets": [
+    "scss/_mixins.scss",
+    "scss/_colors.scss",
+    "scss/_annu-ng-lib-theme.scss",
+    "scss/normalize.scss"
+  ],
   "lib": {
     "entryFile": "public-api.ts",
-    "cssUrl": "inline"
+    "cssUrl": "inline",
+    "styleIncludePaths": [
+      "./scss"
+    ]
   }
 }
