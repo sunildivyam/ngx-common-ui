@@ -2,7 +2,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ImageFileInfo } from '../../classes/image-file-info.class';
 import { ImageInfo } from '../../interfaces/image-form.interface';
 import { UtilsService } from '@annuadvent/ngx-core/utils';
-import { LibConfig } from '@annuadvent/ngx-core/app-config';
+import { AppConfigService } from '@annuadvent/ngx-core/app-config';
 
 @Component({
   selector: 'anu-image-form',
@@ -23,7 +23,7 @@ export class ImageFormComponent implements OnInit {
 
   selectedImage: ImageFileInfo | null = null;
 
-  constructor(private libConfig: LibConfig, private utilsService: UtilsService) { }
+  constructor(private appConfigService: AppConfigService, private utilsService: UtilsService) { }
 
   ngOnInit(): void {
   }
@@ -44,7 +44,7 @@ export class ImageFormComponent implements OnInit {
     } else {
       this.src = this.utilsService.getImageUrl(
         imageFileInfo.fullPath,
-        this.libConfig.imagesSourceUrl || '',
+        this.appConfigService.config.imagesSourceUrl || '',
       );
     }
 

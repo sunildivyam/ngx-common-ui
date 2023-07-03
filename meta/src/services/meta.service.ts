@@ -4,19 +4,27 @@ import { DOCUMENT } from '@angular/common';
 import { META_PROPS } from '../constants/meta.constants';
 import { MetaInfo, MetaProp, MetaPropertyType } from '../interfaces/meta.interface';
 import { UtilsService } from '@annuadvent/ngx-core/utils';
-import { LibConfig } from '@annuadvent/ngx-core/app-config';
+import { AppConfigService } from '@annuadvent/ngx-core/app-config';
 
 @Injectable()
 export class MetaService {
+  private apiBaseUrl: string = '';
 
-  constructor(private meta: Meta, private title: Title, private utilsSvc: UtilsService, private libConfig: LibConfig,
-    @Inject(DOCUMENT) private document: Document) { }
+  constructor(
+    private meta: Meta,
+    private title: Title,
+    private utilsSvc: UtilsService,
+    private appConfigService: AppConfigService,
+    @Inject(DOCUMENT) private document: Document,
+  ) {
+    this.apiBaseUrl = this.appConfigService.config.apiBaseUrl;
+  }
 
   private getMetaInfoWithBaseUrlAdded(metaInfo: MetaInfo): MetaInfo {
     return {
       ...metaInfo,
-      url: this.utilsSvc.getCanonicalUrl(metaInfo.url || '', '', this.libConfig.apiBaseUrl || ''),
-      image: this.utilsSvc.getImageUrl(metaInfo.image || '', '', this.libConfig.apiBaseUrl || ''),
+      url: this.utilsSvc.getCanonicalUrl(metaInfo.url || '', '', this.apiBaseUrl || ''),
+      image: this.utilsSvc.getImageUrl(metaInfo.image || '', '', this.apiBaseUrl || ''),
     } as MetaInfo;
   }
 
