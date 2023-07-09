@@ -6,7 +6,9 @@ import { MetaInfo, MetaProp, MetaPropertyType } from '../interfaces/meta.interfa
 import { UtilsService } from '@annuadvent/ngx-core/utils';
 import { AppConfigService } from '@annuadvent/ngx-core/app-config';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class MetaService {
   private apiBaseUrl: string = '';
 

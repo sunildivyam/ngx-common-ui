@@ -1,7 +1,7 @@
+import { MenuItem } from "../../interfaces/menu.interface";
 
-import { MenuItem } from './menu.interface';
 
- export const MENU_ITEMS: Array<MenuItem> = [
+export const MENU_ITEMS: Array<MenuItem> = [
     {
         href: ['./sample-route1'],
         title: 'Nav Item 1',
