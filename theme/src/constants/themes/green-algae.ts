@@ -19,59 +19,59 @@ const jsonTheme = `{
         },
         {
           "name": "Darkest",
-          "hsl": "hsl(81, 98%, 11%)",
+          "hsl": "hsl(81, 98%, 12%)",
           "h": 81,
           "s": 98,
-          "l": 11
+          "l": 12
         },
         {
           "name": "Darker",
-          "hsl": "hsl(81, 98%, 14%)",
+          "hsl": "hsl(81, 98%, 16%)",
           "h": 81,
           "s": 98,
-          "l": 14
+          "l": 16
         },
         {
           "name": "Dark",
-          "hsl": "hsl(81, 98%, 18%)",
-          "h": 81,
-          "s": 98,
-          "l": 18
-        },
-        {
-          "name": "Normal",
-          "hsl": "hsl(81, 98%, 22%)",
-          "h": 81,
-          "s": 98,
-          "l": 22
-        },
-        {
-          "name": "Light",
           "hsl": "hsl(81, 98%, 28%)",
           "h": 81,
           "s": 98,
           "l": 28
         },
         {
-          "name": "Lighter",
-          "hsl": "hsl(81, 98%, 31%)",
+          "name": "Normal",
+          "hsl": "hsl(81, 98%, 36%)",
           "h": 81,
           "s": 98,
-          "l": 31
+          "l": 36
+        },
+        {
+          "name": "Light",
+          "hsl": "hsl(81, 98%, 58%)",
+          "h": 81,
+          "s": 98,
+          "l": 58
+        },
+        {
+          "name": "Lighter",
+          "hsl": "hsl(81, 98%, 65%)",
+          "h": 81,
+          "s": 98,
+          "l": 65
         },
         {
           "name": "Lightest",
-          "hsl": "hsl(81, 98%, 34%)",
+          "hsl": "hsl(81, 98%, 73%)",
           "h": 81,
           "s": 98,
-          "l": 34
+          "l": 73
         },
         {
           "name": "DeepLight",
-          "hsl": "hsl(81, 98%, 39%)",
+          "hsl": "hsl(81, 98%, 83%)",
           "h": 81,
           "s": 98,
-          "l": 39
+          "l": 83
         }
       ]
     },
@@ -82,66 +82,66 @@ const jsonTheme = `{
       "colors": [
         {
           "name": "DeepDark",
-          "hsl": "hsl(48, 75%, 9%)",
+          "hsl": "hsl(48, 75%, 17%)",
           "h": 48,
           "s": 75,
-          "l": 9
+          "l": 17
         },
         {
           "name": "Darkest",
-          "hsl": "hsl(48, 75%, 13%)",
+          "hsl": "hsl(48, 75%, 21%)",
           "h": 48,
           "s": 75,
-          "l": 13
+          "l": 21
         },
         {
           "name": "Darker",
-          "hsl": "hsl(48, 75%, 18%)",
+          "hsl": "hsl(48, 75%, 27%)",
           "h": 48,
           "s": 75,
-          "l": 18
+          "l": 27
         },
         {
           "name": "Dark",
-          "hsl": "hsl(48, 75%, 24%)",
+          "hsl": "hsl(48, 75%, 37%)",
           "h": 48,
           "s": 75,
-          "l": 24
+          "l": 37
         },
         {
           "name": "Normal",
-          "hsl": "hsl(48, 75%, 32%)",
+          "hsl": "hsl(48, 75%, 44%)",
           "h": 48,
           "s": 75,
-          "l": 32
+          "l": 44
         },
         {
           "name": "Light",
-          "hsl": "hsl(48, 75%, 38%)",
+          "hsl": "hsl(48, 75%, 54%)",
           "h": 48,
           "s": 75,
-          "l": 38
+          "l": 54
         },
         {
           "name": "Lighter",
-          "hsl": "hsl(48, 75%, 43%)",
+          "hsl": "hsl(48, 75%, 61%)",
           "h": 48,
           "s": 75,
-          "l": 43
+          "l": 61
         },
         {
           "name": "Lightest",
-          "hsl": "hsl(48, 75%, 53%)",
+          "hsl": "hsl(48, 75%, 69%)",
           "h": 48,
           "s": 75,
-          "l": 53
+          "l": 69
         },
         {
           "name": "DeepLight",
-          "hsl": "hsl(48, 75%, 66%)",
+          "hsl": "hsl(48, 75%, 85%)",
           "h": 48,
           "s": 75,
-          "l": 66
+          "l": 85
         }
       ]
     },
@@ -152,59 +152,59 @@ const jsonTheme = `{
       "colors": [
         {
           "name": "DeepDark",
-          "hsl": "hsl(0, 0%, 12%)",
+          "hsl": "hsl(0, 0%, 7%)",
           "h": 0,
           "s": 0,
-          "l": 12
+          "l": 7
         },
         {
           "name": "Darkest",
-          "hsl": "hsl(0, 0%, 16%)",
+          "hsl": "hsl(0, 0%, 11%)",
           "h": 0,
           "s": 0,
-          "l": 16
+          "l": 11
         },
         {
           "name": "Darker",
-          "hsl": "hsl(0, 0%, 22%)",
+          "hsl": "hsl(0, 0%, 14%)",
           "h": 0,
           "s": 0,
-          "l": 22
+          "l": 14
         },
         {
           "name": "Dark",
-          "hsl": "hsl(0, 0%, 26%)",
+          "hsl": "hsl(0, 0%, 17%)",
           "h": 0,
           "s": 0,
-          "l": 26
+          "l": 17
         },
         {
           "name": "Normal",
-          "hsl": "hsl(0, 0%, 3%)",
+          "hsl": "hsl(0, 0%, 20%)",
           "h": 0,
           "s": 0,
-          "l": 3
+          "l": 20
         },
         {
           "name": "Light",
-          "hsl": "hsl(0, 0%, 60%)",
+          "hsl": "hsl(0, 0%, 54%)",
           "h": 0,
           "s": 0,
-          "l": 60
+          "l": 54
         },
         {
           "name": "Lighter",
-          "hsl": "hsl(0, 0%, 70%)",
+          "hsl": "hsl(0, 0%, 69%)",
           "h": 0,
           "s": 0,
-          "l": 70
+          "l": 69
         },
         {
           "name": "Lightest",
-          "hsl": "hsl(0, 0%, 83%)",
+          "hsl": "hsl(0, 0%, 82%)",
           "h": 0,
           "s": 0,
-          "l": 83
+          "l": 82
         },
         {
           "name": "DeepLight",
@@ -293,7 +293,7 @@ const jsonTheme = `{
     },
     {
       "name": "fontSize",
-      "value": "17px"
+      "value": "18px"
     },
     {
       "name": "spacing",
@@ -301,11 +301,11 @@ const jsonTheme = `{
     },
     {
       "name": "borderRadius",
-      "value": "0.5rem"
+      "value": "0.3rem"
     },
     {
       "name": "siteWidth",
-      "value": "1080px"
+      "value": "1396px"
     },
     {
       "name": "lineHeight",
