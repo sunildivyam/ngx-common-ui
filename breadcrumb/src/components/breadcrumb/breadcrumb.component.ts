@@ -19,7 +19,11 @@ export class BreadcrumbComponent implements OnInit, OnChanges {
 
   private initBreadcrumb(): void {
     let url = this.router.url;
-    url = url.substring(url.indexOf('?'));
+    const indexOfQueryMark = url.indexOf('?');
+    if (indexOfQueryMark >= 0) {
+      url = url.substring(0, indexOfQueryMark);
+    }
+
     this.urlSegments = url.split('/');
   }
 

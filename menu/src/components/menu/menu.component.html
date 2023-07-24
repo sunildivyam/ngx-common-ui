@@ -3,7 +3,7 @@
         <div *ngIf="logoUrl" class="row nowrap logo">
             <div>
                 <a [routerLink]="headingHref">
-                    <img [src]="logoUrl" [alt]="heading" />
+                    <img [src]="logoUrl" [alt]="heading" [style.minWidth]="logoWidth" />
                 </a>
             </div>
             <div>
