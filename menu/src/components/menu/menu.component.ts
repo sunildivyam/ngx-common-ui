@@ -14,10 +14,12 @@ export class MenuComponent implements OnInit {
   @Input() subHeadingHref: Array<string> = [];
   @Input() opened: boolean = false;
   @Input() logoUrl: string = '';
+  @Input() logoWidth: string = 'auto';
+
   @Output() selected = new EventEmitter<MenuItem>();
   @Output() openStatusChanged = new EventEmitter<boolean>();
 
-  constructor() {}
+  constructor() { }
 
   ngOnInit(): void {
   }

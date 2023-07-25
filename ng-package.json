@@ -11,7 +11,9 @@
     "entryFile": "public-api.ts",
     "cssUrl": "inline",
     "styleIncludePaths": [
-      "./scss"
+      "./scss",
+      "../../node_modules/prismjs/themes",
+      "../../node_modules/firebaseui/dist"
     ]
   }
 }

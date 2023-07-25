@@ -1,8 +1,8 @@
 {
   "name": "@annuadvent/ngx-common-ui",
-  "version": "0.0.1",
+  "version": "1.0.1",
   "license": "MIT",
-  "description": "Angular components library",
+  "description": "The ngx-common-ui angular components library focuses on providing a collection of common UI components that can be utilized across different Angular projects. It includes a wide range of UI elements such as buttons, forms, modals, alerts, navigation menus, and more. These components are built with flexibility and customization in mind, allowing developers to easily adapt them to suit their application's specific design requirements.",
   "homepage": "https://github.com/sunildivyam/ngx-common-ui",
   "bugs": "https://github.com/sunildivyam/ngx-common-ui/issues",
   "repository": {
@@ -13,9 +13,21 @@
     "node": "18.16.0",
     "npm": "9.5.1"
   },
+  "keywords": [
+    "Angular",
+    "Angular library",
+    "Angular components",
+    "Angular ui components",
+    "ngx-common-ui",
+    "TypeScript",
+    "javascript",
+    "javascript framework"
+  ],
   "peerDependencies": {
     "@angular/common": "^16.1.0",
-    "@angular/core": "^16.1.0"
+    "@angular/core": "^16.1.0",
+    "@annuadvent/ngx-core": "1.0.1",
+    "prismjs": "^1.29.0"
   },
   "dependencies": {
     "tslib": "^2.3.0"

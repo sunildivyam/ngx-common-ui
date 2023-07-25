@@ -1,9 +1,9 @@
 {
-	"name": "code-block",
+	"name": "image-browser",
 	"version": "0.0.1",
 	"license": "MIT",
-	"description": "Angular @annuadvent/ngx-common-ui/code-block components library module",
-	"homepage": "https://github.com/sunildivyam/ngx-common-ui/code-block",
+	"description": "Angular @annuadvent/ngx-common-ui/image-browser components library module",
+	"homepage": "https://github.com/sunildivyam/ngx-common-ui/image-browser",
 	"bugs": "https://github.com/sunildivyam/ngx-common-ui/issues",
 	"repository": {
 		"type": "git",
@@ -13,10 +13,17 @@
 		"node": "18.16.0",
 		"npm": "9.5.1"
 	},
+	"keywords": [
+		"TypeScript",
+		"javascript",
+		"javascript framework",
+		"Angular",
+		"Angular library",
+		"Angular components"
+	],
 	"peerDependencies": {
 		"@angular/common": "^16.1.0",
-		"@angular/core": "^16.1.0",
-		"prismjs": "^1.29.0"
+		"@angular/core": "^16.1.0"
 	},
 	"dependencies": {
 		"tslib": "^2.3.0"

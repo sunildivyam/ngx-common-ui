@@ -1,14 +1,4 @@
-@import '_mixins';
-
-:host {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    background-color: var(--anu-primary-normal);
-    color: var(--anu-accent-deep-light);
-
-    line-height: calc(var(--anu-line-height)/1.7);
-}
+@import 'mixins';
 
 .logo {
     justify-content: flex-start;
@@ -95,6 +85,7 @@
 .annuMenu {
     position: relative;
     overflow-x: clip;
+    line-height: calc(0.7 * var(--anu-line-height));
 
     a {
         color: var(--anu-accent-deep-light);

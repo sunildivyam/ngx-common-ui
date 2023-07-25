@@ -1,5 +1,4 @@
-
-import { MENU_ITEMS } from '@annuadvent/menu/components/menu/menu.docs';
+import { MENU_ITEMS } from "@annuadvent/ngx-common-ui/menu/src/components/menu/menu.docs";
 
 
 export const FooterNavComponent: any = {

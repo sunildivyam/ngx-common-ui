@@ -57,10 +57,12 @@ import 'prismjs/components/prism-yaml';
 
 declare var Prism: any;
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class HighlightService {
 
-  constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
+  constructor(@Inject(PLATFORM_ID) private platformId: Object) { }
 
   public highlightAll() {
     if (isPlatformBrowser(this.platformId)) {
@@ -77,6 +79,6 @@ export class HighlightService {
   }
 
   public getSourceLanguagesList(): Array<SourceLanguage> {
-    return [...(SOURCE_LANGUAGES.filter(lng=> lng.enabled === true))];
+    return [...(SOURCE_LANGUAGES.filter(lng => lng.enabled === true))];
   }
 }

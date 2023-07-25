@@ -1,13 +1,11 @@
 {
 	"$schema": "../../../node_modules/ng-packagr/ng-package.schema.json",
-	"dest": "../../../dist/ngx-common-ui/scss",
+	"dest": "../../../dist/ngx-common-ui/image-browser",
 	"lib": {
 		"entryFile": "./public-api.ts",
 		"cssUrl": "inline",
 		"styleIncludePaths": [
-			"./",
-			"../../../node_modules/prismjs/themes",
-			"../../../node_modules/firebaseui/dist"
+			"../scss"
 		]
 	}
 }
