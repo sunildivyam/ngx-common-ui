@@ -1,7 +1,7 @@
 <div class="annuModal col-lg-10 col-md-11 col-sm-11 shadow">
-    <div *ngIf="title || enableClose" class="row stretch nowrap">
+    <div *ngIf="modalTitle || enableClose" class="row stretch nowrap">
         <div class="">
-            <h1 *ngIf="title">{{title}}</h1>
+            <h1 *ngIf="modalTitle">{{modalTitle}}</h1>
         </div>
         <div class="">
             <a *ngIf="enableClose" href="javascript:void(0)" class="btn btn-primary" (click)="cancelClicked()">X</a>
