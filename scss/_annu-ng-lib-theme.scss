@@ -995,3 +995,34 @@ input.no-border[type=checkbox] {
   }
 
 }
+
+.overflow {
+  &_hidden {
+    overflow: hidden;
+  }
+
+  &_auto {
+    overflow: auto;
+  }
+
+  &_x {
+    &_hidden {
+      overflow: hidden;
+    }
+
+    &_auto {
+      overflow: auto;
+    }
+  }
+
+  &_y {
+    &_hidden {
+      overflow: hidden;
+    }
+
+    &_auto {
+      overflow: auto;
+    }
+  }
+
+}
