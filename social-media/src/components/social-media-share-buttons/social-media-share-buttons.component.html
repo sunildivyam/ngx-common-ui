@@ -1,0 +1,6 @@
+<ng-container *ngFor="let btn of buttons">
+    <a class="spacing-half share-btn" [href]="btn.share.desktop" [title]="btn.ariaLabel" [ariaLabel]="btn.ariaLabel"
+        target="_blank" [style.color]="btn.color">
+        <img [src]="btn.icon" />
+    </a>
+</ng-container>
