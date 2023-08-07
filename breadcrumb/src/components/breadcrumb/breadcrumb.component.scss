@@ -1,1 +1,7 @@
-:host {}
+:host {
+    .breadcrumb {
+        &__item {
+            word-wrap: break-word;
+        }
+    }
+}

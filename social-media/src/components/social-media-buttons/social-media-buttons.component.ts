@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { SocialMediaButton } from '../../interfaces/social-media.interface';
 import { SOCIAL_MEDIA_BUTTONS } from '../../constants/social-media.constants';
 
@@ -8,5 +8,12 @@ import { SOCIAL_MEDIA_BUTTONS } from '../../constants/social-media.constants';
   styleUrls: ['./social-media-buttons.component.scss']
 })
 export class SocialMediaButtonsComponent {
-  buttons: Array<SocialMediaButton> = SOCIAL_MEDIA_BUTTONS;
+  @Input() buttons: Array<SocialMediaButton> = SOCIAL_MEDIA_BUTTONS;
+  @Output() clicked = new EventEmitter<SocialMediaButton>();
+
+
+  public btnClicked(btn: SocialMediaButton): void {
+    this.clicked.emit(btn);
+  }
+
 }

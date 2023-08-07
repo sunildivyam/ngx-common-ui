@@ -1,4 +1,4 @@
 <ng-container *ngFor="let btn of buttons">
-    <a class="spacing-half share-btn" [href]="btn.url" [title]="btn.label" [ariaLabel]="btn.label" target="_blank"><img
-            [src]="btn.icon" /></a>
+    <a class="spacing-half share-btn" [href]="btn.url" [title]="btn.label" [ariaLabel]="btn.label" target="_blank"
+        (click)="btnClicked(btn)"><img [src]="btn.icon" /></a>
 </ng-container>

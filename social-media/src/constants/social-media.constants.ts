@@ -68,7 +68,7 @@ export const SOCIAL_MEDIA_SHARE_BUTTONS: Array<SocialMediaShareButton> = [
         icon: SOCIAL_MEDIA_ICONS.telegram,
         color: '#0088cc',
         share: {
-            desktop: 'https://t.me/share/url?'
+            desktop: 'https://telegram.me/share/url?'
         },
         params: {
             url: 'url',
