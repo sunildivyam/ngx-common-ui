@@ -20,7 +20,7 @@ export class ModalComponent implements OnInit, OnChanges {
   /**
    * Title of the modal.
    */
-  @Input() title: string = '';
+  @Input() modalTitle: string = '';
 
   /**
    * Ok button label, default is <code>Ok</code>

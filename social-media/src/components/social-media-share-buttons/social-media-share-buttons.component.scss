@@ -1,0 +1,54 @@
+:host {
+    transition: all 0.2s;
+
+    img {
+        transition: all 0.5s;
+    }
+
+    .share-btn {
+
+        &:hover {
+            img {
+                transform: scale(1.2);
+            }
+        }
+    }
+
+    &.fullscreen-mode {
+        position: fixed;
+        left: -0.5rem;
+        top: 50%;
+        height: 50px;
+        z-index: 9999;
+        overflow: hidden;
+
+        img {
+            transition: all 0.5s;
+            transform: rotate(180deg) scale(0.5);
+        }
+
+        .share-btn-root {
+            opacity: 0.8;
+            padding: 0;
+
+            img {
+                transform: rotate(0deg) scale(0.5);
+            }
+        }
+    }
+
+    &.expanded {
+        height: auto;
+        top: 4rem;
+
+        img {
+            transform: rotate(360deg) scale(1);
+        }
+
+        .share-btn-root {
+            img {
+                transform: rotate(90deg) scale(1);
+            }
+        }
+    }
+}

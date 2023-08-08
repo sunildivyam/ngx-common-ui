@@ -1,0 +1,13 @@
+:host {
+    .share-btn {
+        img {
+            transition: all 0.2s;
+        }
+
+        &:hover {
+            img {
+                transform: scale(1.2);
+            }
+        }
+    }
+}

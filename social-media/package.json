@@ -1,17 +1,17 @@
 {
-	"name": "image-browser",
+	"name": "social-media",
 	"version": "0.0.1",
 	"license": "MIT",
-	"description": "Angular @annuadvent/ngx-common-ui/image-browser components library module",
-	"homepage": "https://github.com/sunildivyam/ngx-common-ui/image-browser",
+	"description": "Angular @annuadvent/ngx-common-ui/social-media components library module",
+	"homepage": "https://github.com/sunildivyam/ngx-common-ui/social-media",
 	"bugs": "https://github.com/sunildivyam/ngx-common-ui/issues",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/sunildivyam/ngx-common-ui.git"
 	},
 	"engines": {
-		"node": "18.16.0",
-		"npm": "9.5.1"
+		"node": "18.17.0",
+		"npm": "9.6.7"
 	},
 	"keywords": [
 		"TypeScript",

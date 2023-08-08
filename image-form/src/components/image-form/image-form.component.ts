@@ -1,8 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { ImageFileInfo } from '../../../../image-browser/src/classes/image-file-info.class';
 import { ImageInfo } from '../../interfaces/image-form.interface';
-import { UtilsService } from '@annuadvent/ngx-core/utils';
-import { AppConfigService } from '@annuadvent/ngx-core/app-config';
 
 @Component({
   selector: 'anu-image-form',

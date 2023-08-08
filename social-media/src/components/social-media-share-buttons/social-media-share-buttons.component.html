@@ -1,0 +1,14 @@
+<div *ngIf="fullscreenMode" class="spacing-half share-btn-root primary-light-grad border-round">
+    <a class="" href="javascript:void(0)" title="Share this page" ariaLabel="Share this page"
+        (click)="expanded = !expanded">
+        <img [src]="shareImage" />
+    </a>
+</div>
+<ng-container *ngFor="let btn of buttons">
+    <div class="spacing-half share-btn">
+        <a class="" [href]="btn.share.desktop" [title]="btn.ariaLabel" [ariaLabel]="btn.ariaLabel" target="_blank"
+            [style.color]="btn.color" (click)="btnClicked(btn)">
+            <img [src]="btn.icon" />
+        </a>
+    </div>
+</ng-container>
