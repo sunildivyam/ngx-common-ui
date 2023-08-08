@@ -997,30 +997,30 @@ input.no-border[type=checkbox] {
 }
 
 .overflow {
-  &_hidden {
+  &-hidden {
     overflow: hidden;
   }
 
-  &_auto {
+  &-auto {
     overflow: auto;
   }
 
-  &_x {
-    &_hidden {
+  &-x {
+    &-hidden {
       overflow: hidden;
     }
 
-    &_auto {
+    &-auto {
       overflow: auto;
     }
   }
 
-  &_y {
-    &_hidden {
+  &-y {
+    &-hidden {
       overflow: hidden;
     }
 
-    &_auto {
+    &-auto {
       overflow: auto;
     }
   }
