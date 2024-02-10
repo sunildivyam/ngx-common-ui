@@ -63,12 +63,12 @@ export class SocialMediaShareButtonsComponent implements OnInit, OnChanges {
   }
 
   public updateShareButtonUrls(): void {
-    const url = this.document.head.querySelector('link[rel="canonical"]').getAttribute('href') ||
+    const url = this.document.head.querySelector('link[rel="canonical"]')?.getAttribute('href') ||
       this.appConfigService.config.apiBaseUrl + this.router.url;
-    const title = this.document.head.querySelector('meta[name="title"]').getAttribute('content') || url;
-    const description = this.document.head.querySelector('meta[name="description"]').getAttribute('content') || url;
-    const imageUrl = this.document.head.querySelector('meta[property="og:image"]').getAttribute('content') || '';
-    const siteName = this.document.head.querySelector('meta[property="og:site_name"]').getAttribute('content') || '';
+    const title = this.document.head.querySelector('meta[name="title"]')?.getAttribute('content') || url;
+    const description = this.document.head.querySelector('meta[name="description"]')?.getAttribute('content') || url;
+    const imageUrl = this.document.head.querySelector('meta[property="og:image"]')?.getAttribute('content') || '';
+    const siteName = this.document.head.querySelector('meta[property="og:site_name"]')?.getAttribute('content') || '';
 
     this.buttons = this.buttons.map(shareBtn => {
       let paramsStr = '';

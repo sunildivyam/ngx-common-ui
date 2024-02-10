@@ -1,127 +1,141 @@
-@import 'mixins';
+@import "mixins";
 
 .logo {
-    justify-content: flex-start;
-    align-items: center;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 .app-name {
-    font-weight: bold;
-    margin-bottom: 0;
-    padding-bottom: 0;
+  color: inherit;
+  font-weight: bold;
+  margin-bottom: 0;
+  padding-bottom: 0;
 
-    @include large {
-        font-size: 2rem;
-    }
+  @include large {
+    font-size: 2rem;
+  }
 
-    @include medium {
-        font-size: 1.8rem;
-    }
+  @include medium {
+    font-size: 1.8rem;
+  }
 
-    @include small {
-        font-size: 1.5rem;
-    }
+  @include small {
+    font-size: 1.5rem;
+  }
 }
 
 .app-title {
-    margin-top: 0;
-    padding-top: 0;
+  color: inherit;
+  margin-top: 0;
+  padding-top: 0;
 
-    @include large {
-        font-size: 1rem;
-    }
+  @include large {
+    font-size: 1rem;
+  }
 
-    @include medium {
-        font-size: 0.8rem;
-    }
+  @include medium {
+    font-size: 0.8rem;
+  }
 
-    @include small {
-        font-size: 0.7rem;
-    }
+  @include small {
+    font-size: 0.7rem;
+  }
 }
 
 @mixin menufloated {
-    position: absolute;
-    margin-top: 4.3rem;
-    padding: 1rem 0;
-    right: 0;
-    flex-direction: column;
-    background-color: var(--anu-primary-normal);
-    border-bottom: 5px solid var(--anu-primary-light);
-    border-top: none;
-    align-items: center;
-    z-index: #{$menu-z-index};
-    transform-origin: right;
-    transform: scaleX(0);
-    width: 0;
-    transition: all 0.5s;
-    transition-property: width, transform;
+  position: absolute;
+  margin-top: 4.3rem;
+  padding: 1rem 0;
+  right: 0;
+  flex-direction: column;
+  background-color: var(--anu-primary-normal);
+  border-bottom: 5px solid var(--anu-primary-light);
+  border-top: none;
+  align-items: center;
+  z-index: #{$menu-z-index};
+  transform-origin: right;
+  transform: scaleX(0);
+  width: 0;
+  transition: all 0.5s;
+  transition-property: width, transform;
+  flex-wrap: nowrap;
 
-    li {
-        width: 100%;
+  li {
+    width: 100%;
 
-        .btn {
-            width: 100%;
-        }
+    .menu-item {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
+  }
 
-    li+li {
-        margin-top: 0.5rem;
+  li + li {
+    margin-top: 0.5rem;
+    margin-left: 0;
 
-        .btn {
-            border-top: 1px solid var(--anu-primary-light);
-        }
+    .menu-item {
+      border-top: 1px solid var(--anu-primary-light);
     }
+  }
 
-    &.opened {
-        transform: scaleX(1);
-        width: 100%;
-        padding-left: 1rem;
-        padding-right: 1rem;
-        box-shadow: 0.01rem 0.2rem 0.3rem var(--anu-background-normal);
-    }
+  &.opened {
+    transform: scaleX(1);
+    width: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    box-shadow: 0.01rem 0.2rem 0.3rem var(--anu-background-normal);
+  }
 }
 
 .annuMenu {
-    position: relative;
-    overflow-x: clip;
-    line-height: calc(0.7 * var(--anu-line-height));
+  position: relative;
+  overflow-x: clip;
+  line-height: calc(0.7 * var(--anu-line-height));
 
-    a {
-        color: var(--anu-accent-deep-light);
-    }
+  ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: right;
+    list-style: none;
+    margin: 0;
+    padding: 0;
 
-    ul {
-        display: flex;
-        flex-direction: row;
-        justify-content: right;
-        list-style: none;
-        margin: 0;
-        padding: 0;
-
-        li {
-            a {
-                font-size: 1rem;
-                font-weight: bold;
-                border: none;
-            }
-        }
-
-        li+li {
-            margin-left: 0.5rem;
-        }
-
-        @include medium {
-            @include menufloated;
-        }
-
-        @include small {
-            @include menufloated;
-        }
-    }
-
-    .extra-nav {
+    li {
+      .menu-item {
         display: flex;
         flex-direction: column;
+        align-items: center;
+        font-size: 1rem;
+        font-weight: bold;
+        border: none;
+        text-decoration: none;
+        padding: 0.5rem;
+
+        &:hover {
+          color: inherit;
+          filter: invert(1);
+        }
+      }
     }
+
+    li + li {
+      margin-left: 0.5rem;
+    }
+
+    @include medium {
+      @include menufloated;
+    }
+
+    @include small {
+      @include menufloated;
+    }
+  }
+
+  .extra-nav {
+    display: flex;
+    flex-direction: column;
+  }
 }
