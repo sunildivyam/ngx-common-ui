@@ -1,9 +1,9 @@
 @import "normalize";
 @import "mixins";
-@import 'color-classes';
+@import "color-classes";
 // Import all fonts here, that has been refered from theme files.
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap');
-@import 'firebaseui';
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap");
+@import "firebaseui";
 @import "prism-okaidia";
 
 // Use any of the Prismjs themes for code highlighting:
@@ -25,6 +25,14 @@ html {
   line-height: var(--anu-line-height);
   letter-spacing: var(--anu-letter-spacing);
   scroll-behavior: smooth;
+
+  @include small {
+    font-size: 90%;
+  }
+
+  @include medium {
+    font-size: 80%;
+  }
 }
 
 body {
@@ -39,7 +47,7 @@ body {
   align-items: center;
   width: 100%;
 
-  &>* {
+  & > * {
     max-width: var(--anu-site-width);
   }
 }
@@ -58,7 +66,7 @@ a {
   color: var(--anu-accent-darker);
   background-color: var(--anu-primary-normal);
   border: solid 0.001em var(--anu-primary-dark);
-  border-radius: calc(var(--anu-border-radius)/2.5);
+  border-radius: calc(var(--anu-border-radius) / 2.5);
   font-size: 1rem;
   text-align: center;
   transition: color 0.2s, background-color 0.2s, border-color 0.2s;
@@ -91,7 +99,6 @@ a {
     &:hover {
       color: var(--anu-accent-lightest);
       background-color: #{$success-hover};
-      ;
       border-color: var(--anu-primary-normal);
     }
   }
@@ -104,7 +111,6 @@ a {
     &:hover {
       color: var(--anu-accent-lightest);
       background-color: #{$warning-hover};
-      ;
       border-color: var(--anu-primary-normal);
     }
   }
@@ -117,7 +123,6 @@ a {
     &:hover {
       color: var(--anu-accent-lightest);
       background-color: #{$error-hover};
-      ;
       border-color: var(--anu-primary-normal);
     }
   }
@@ -130,7 +135,7 @@ a {
     pointer-events: none;
   }
 
-  +.btn {
+  + .btn {
     margin-left: 1rem;
   }
 
@@ -149,7 +154,7 @@ a {
     padding: 0.75rem;
     font-size: 0.9rem;
 
-    +.btn {
+    + .btn {
       margin-top: 1rem;
       margin-left: 0;
     }
@@ -257,7 +262,7 @@ option {
   max-width: 100%;
 
   &:focus-visible {
-    outline-color: var(--anu-primary-normal)
+    outline-color: var(--anu-primary-normal);
   }
 }
 
@@ -293,7 +298,7 @@ input[type="checkbox"] {
 
   &:checked:after {
     background: var(--anu-primary-deep-light);
-    content: '\2713';
+    content: "\2713";
     font-size: #{$checkbox_size};
   }
 
@@ -314,14 +319,14 @@ input[type="checkbox"] {
   }
 }
 
-input.no-border[type=checkbox] {
+input.no-border[type="checkbox"] {
   &:before {
     border: none;
   }
 
   &:after {
     border: none;
-    content: '\2713';
+    content: "\2713";
     font-size: #{$checkbox_size};
     color: var(--anu-accent-light);
   }
@@ -337,7 +342,6 @@ input.no-border[type=checkbox] {
     font-size: #{$checkbox_size};
   }
 }
-
 
 //  Error/Success/Warining
 .error {
@@ -367,7 +371,7 @@ input.no-border[type=checkbox] {
   flex-wrap: wrap;
 }
 
-[class*='col-'] {
+[class*="col-"] {
   transition: width 0.2s;
 }
 
@@ -592,7 +596,7 @@ input.no-border[type=checkbox] {
       &-md {
         @include medium {
           margin-left: #{$md-spacing};
-          margin-right: var(--anu-spacing)/2;
+          margin-right: var(--anu-spacing) / 2;
         }
       }
 
@@ -886,13 +890,13 @@ input.no-border[type=checkbox] {
   box-shadow: 0.1rem 0.1rem 0.5rem 0.1rem var(--anu-background-normal);
 }
 
-:not(pre)>code,
+:not(pre) > code,
 .code {
   background-color: var(--anu-accent-darker);
   color: var(--anu-accent-deep-light);
   padding-left: 0.5rem;
   padding-right: 0.5rem;
-  border-radius: calc(var(--anu-border-radius)/2);
+  border-radius: calc(var(--anu-border-radius) / 2);
 }
 
 .text {
@@ -993,7 +997,6 @@ input.no-border[type=checkbox] {
   &-secondary {
     border-color: var(--anu-secondary-normal);
   }
-
 }
 
 .overflow {
@@ -1024,5 +1027,4 @@ input.no-border[type=checkbox] {
       overflow: auto;
     }
   }
-
 }
