@@ -938,15 +938,21 @@ input[type="range"] {
     text-align: center;
 
     &-sm {
-      text-align: center;
+      @include small {
+        text-align: center;
+      }
     }
 
     &-md {
-      text-align: center;
+      @include medium {
+        text-align: center;
+      }
     }
 
     &-lg {
-      text-align: center;
+      @include large {
+        text-align: center;
+      }
     }
   }
 
@@ -954,15 +960,21 @@ input[type="range"] {
     text-align: left;
 
     &-sm {
-      text-align: left;
+      @include small {
+        text-align: left;
+      }
     }
 
     &-md {
-      text-align: left;
+      @include medium {
+        text-align: left;
+      }
     }
 
     &-lg {
-      text-align: left;
+      @include large {
+        text-align: left;
+      }
     }
   }
 
@@ -970,15 +982,21 @@ input[type="range"] {
     text-align: right;
 
     &-sm {
-      text-align: right;
+      @include small {
+        text-align: right;
+      }
     }
 
     &-md {
-      text-align: right;
+      @include medium {
+        text-align: right;
+      }
     }
 
     &-lg {
-      text-align: right;
+      @include large {
+        text-align: right;
+      }
     }
   }
 
@@ -986,15 +1004,21 @@ input[type="range"] {
     text-align: justify;
 
     &-sm {
-      text-align: justify;
+      @include small {
+        text-align: justify;
+      }
     }
 
     &-md {
-      text-align: justify;
+      @include medium {
+        text-align: justify;
+      }
     }
 
     &-lg {
-      text-align: justify;
+      @include large {
+        text-align: justify;
+      }
     }
   }
 }
