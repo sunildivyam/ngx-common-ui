@@ -74,6 +74,11 @@
           (click)="itemCliked(item)"
           >{{ item.title }}</a
         >
+        <span
+          class="menu-separator"
+          [ngClass]="separatorClassNames"
+          *ngIf="enableSeparator"
+        ></span>
       </li>
       <li class="extra-nav center middle">
         <ng-content></ng-content>

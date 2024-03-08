@@ -1,4 +1,4 @@
-import { Theme } from '../../interfaces/theme.interface';
+import { Theme } from "../../interfaces/theme.interface";
 
 const jsonTheme = `{
   "name": "pureGold",
@@ -40,10 +40,10 @@ const jsonTheme = `{
         },
         {
           "name": "Normal",
-          "hsl": "hsl(46, 100%, 48%)",
+          "hsl": "hsl(46, 100%, 49%)",
           "h": 46,
           "s": 100,
-          "l": 48
+          "l": 49
         },
         {
           "name": "Light",
@@ -159,129 +159,59 @@ const jsonTheme = `{
         },
         {
           "name": "Darkest",
-          "hsl": "hsl(80, 0%, 21.125%)",
+          "hsl": "hsl(80, 0%, 16%)",
           "h": 80,
           "s": 0,
-          "l": 21.125
+          "l": 16
         },
         {
           "name": "Darker",
-          "hsl": "hsl(80, 0%, 32.25%)",
+          "hsl": "hsl(80, 0%, 22%)",
           "h": 80,
           "s": 0,
-          "l": 32.25
+          "l": 22
         },
         {
           "name": "Dark",
-          "hsl": "hsl(80, 0%, 38%)",
+          "hsl": "hsl(80, 0%, 25%)",
           "h": 80,
           "s": 0,
-          "l": 38
+          "l": 25
         },
         {
           "name": "Normal",
-          "hsl": "hsl(80, 0%, 44%)",
+          "hsl": "hsl(80, 0%, 29%)",
           "h": 80,
           "s": 0,
-          "l": 44
+          "l": 29
         },
         {
           "name": "Light",
-          "hsl": "hsl(80, 0%, 65.625%)",
+          "hsl": "hsl(80, 0%, 49%)",
           "h": 80,
           "s": 0,
-          "l": 65.625
+          "l": 49
         },
         {
           "name": "Lighter",
-          "hsl": "hsl(80, 0%, 76.75%)",
+          "hsl": "hsl(80, 0%, 57%)",
           "h": 80,
           "s": 0,
-          "l": 76.75
+          "l": 57
         },
         {
           "name": "Lightest",
-          "hsl": "hsl(80, 0%, 87.875%)",
+          "hsl": "hsl(80, 0%, 77%)",
           "h": 80,
           "s": 0,
-          "l": 87.875
+          "l": 77
         },
         {
           "name": "DeepLight",
-          "hsl": "hsl(80, 0%, 99%)",
+          "hsl": "hsl(80, 0%, 96%)",
           "h": 80,
           "s": 0,
-          "l": 99
-        }
-      ]
-    },
-    {
-      "name": "background",
-      "hue": 96,
-      "saturation": 51,
-      "colors": [
-        {
-          "name": "DeepDark",
-          "hsl": "hsl(96, 51%, 10%)",
-          "h": 96,
-          "s": 51,
-          "l": 10
-        },
-        {
-          "name": "Darkest",
-          "hsl": "hsl(96, 51%, 21.125%)",
-          "h": 96,
-          "s": 51,
-          "l": 21.125
-        },
-        {
-          "name": "Darker",
-          "hsl": "hsl(96, 51%, 32.25%)",
-          "h": 96,
-          "s": 51,
-          "l": 32.25
-        },
-        {
-          "name": "Dark",
-          "hsl": "hsl(96, 51%, 43.375%)",
-          "h": 96,
-          "s": 51,
-          "l": 43.375
-        },
-        {
-          "name": "Normal",
-          "hsl": "hsl(96, 51%, 54.5%)",
-          "h": 96,
-          "s": 51,
-          "l": 54.5
-        },
-        {
-          "name": "Light",
-          "hsl": "hsl(96, 51%, 65.625%)",
-          "h": 96,
-          "s": 51,
-          "l": 65.625
-        },
-        {
-          "name": "Lighter",
-          "hsl": "hsl(96, 51%, 76.75%)",
-          "h": 96,
-          "s": 51,
-          "l": 76.75
-        },
-        {
-          "name": "Lightest",
-          "hsl": "hsl(96, 51%, 87.875%)",
-          "h": 96,
-          "s": 51,
-          "l": 87.875
-        },
-        {
-          "name": "DeepLight",
-          "hsl": "hsl(96, 51%, 99%)",
-          "h": 96,
-          "s": 51,
-          "l": 99
+          "l": 96
         }
       ]
     }
@@ -289,7 +219,7 @@ const jsonTheme = `{
   "typography": [
     {
       "name": "fontFamily",
-      "value": "Times new roman"
+      "value": "Lato, sans-serif"
     },
     {
       "name": "fontSize",

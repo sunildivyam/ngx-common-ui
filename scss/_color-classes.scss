@@ -9,7 +9,7 @@ $default-gradient-lighten: 60%;
   }
 
   &-border {
-    border: 1px solid var(--anu-primary-deep-dark);
+    border-color: var(--anu-primary-deep-dark);
   }
 
   &-grad {
@@ -45,7 +45,7 @@ $default-gradient-lighten: 60%;
   }
 
   &-border {
-    border: 1px solid var(--anu-primary-darkest);
+    border-color: var(--anu-primary-darkest);
   }
 
   &-grad {
@@ -81,7 +81,7 @@ $default-gradient-lighten: 60%;
   }
 
   &-border {
-    border: 1px solid var(--anu-primary-darker);
+    border-color: var(--anu-primary-darker);
   }
 
   &-grad {
@@ -117,7 +117,7 @@ $default-gradient-lighten: 60%;
   }
 
   &-border {
-    border: 1px solid var(--anu-primary-dark);
+    border-color: var(--anu-primary-dark);
   }
 
   &-grad {
@@ -153,7 +153,7 @@ $default-gradient-lighten: 60%;
   }
 
   &-border {
-    border: 1px solid var(--anu-primary-normal);
+    border-color: var(--anu-primary-normal);
   }
 
   &-grad {
@@ -189,7 +189,7 @@ $default-gradient-lighten: 60%;
   }
 
   &-border {
-    border: 1px solid var(--anu-primary-light);
+    border-color: var(--anu-primary-light);
   }
 
   &-grad {
@@ -225,7 +225,7 @@ $default-gradient-lighten: 60%;
   }
 
   &-border {
-    border: 1px solid var(--anu-primary-lighter);
+    border-color: var(--anu-primary-lighter);
   }
 
   &-grad {
@@ -261,7 +261,7 @@ $default-gradient-lighten: 60%;
   }
 
   &-border {
-    border: 1px solid var(--anu-primary-lightest);
+    border-color: var(--anu-primary-lightest);
   }
 
   &-grad {
@@ -297,7 +297,7 @@ $default-gradient-lighten: 60%;
   }
 
   &-border {
-    border: 1px solid var(--anu-primary-deep-light);
+    border-color: var(--anu-primary-deep-light);
   }
 
   &-grad {
@@ -333,7 +333,7 @@ $default-gradient-lighten: 60%;
   }
 
   &-border {
-    border: 1px solid var(--anu-secondary-deep-dark);
+    border-color: var(--anu-secondary-deep-dark);
   }
 
   &-grad {
@@ -369,7 +369,7 @@ $default-gradient-lighten: 60%;
   }
 
   &-border {
-    border: 1px solid var(--anu-secondary-darkest);
+    border-color: var(--anu-secondary-darkest);
   }
 
   &-grad {
@@ -405,7 +405,7 @@ $default-gradient-lighten: 60%;
   }
 
   &-border {
-    border: 1px solid var(--anu-secondary-darker);
+    border-color: var(--anu-secondary-darker);
   }
 
   &-grad {
@@ -441,7 +441,7 @@ $default-gradient-lighten: 60%;
   }
 
   &-border {
-    border: 1px solid var(--anu-secondary-dark);
+    border-color: var(--anu-secondary-dark);
   }
 
   &-grad {
@@ -477,7 +477,7 @@ $default-gradient-lighten: 60%;
   }
 
   &-border {
-    border: 1px solid var(--anu-secondary-normal);
+    border-color: var(--anu-secondary-normal);
   }
 
   &-grad {
@@ -513,7 +513,7 @@ $default-gradient-lighten: 60%;
   }
 
   &-border {
-    border: 1px solid var(--anu-secondary-light);
+    border-color: var(--anu-secondary-light);
   }
 
   &-grad {
@@ -549,7 +549,7 @@ $default-gradient-lighten: 60%;
   }
 
   &-border {
-    border: 1px solid var(--anu-secondary-lighter);
+    border-color: var(--anu-secondary-lighter);
   }
 
   &-grad {
@@ -585,7 +585,7 @@ $default-gradient-lighten: 60%;
   }
 
   &-border {
-    border: 1px solid var(--anu-secondary-lightest);
+    border-color: var(--anu-secondary-lightest);
   }
 
   &-grad {
@@ -621,7 +621,7 @@ $default-gradient-lighten: 60%;
   }
 
   &-border {
-    border: 1px solid var(--anu-secondary-deep-light);
+    border-color: var(--anu-secondary-deep-light);
   }
 
   &-grad {
@@ -657,7 +657,7 @@ $default-gradient-lighten: 60%;
   }
 
   &-border {
-    border: 1px solid var(--anu-accent-deep-dark);
+    border-color: var(--anu-accent-deep-dark);
   }
 
   &-grad {
@@ -693,7 +693,7 @@ $default-gradient-lighten: 60%;
   }
 
   &-border {
-    border: 1px solid var(--anu-accent-darkest);
+    border-color: var(--anu-accent-darkest);
   }
 
   &-grad {
@@ -729,7 +729,7 @@ $default-gradient-lighten: 60%;
   }
 
   &-border {
-    border: 1px solid var(--anu-accent-darker);
+    border-color: var(--anu-accent-darker);
   }
 
   &-grad {
@@ -765,7 +765,7 @@ $default-gradient-lighten: 60%;
   }
 
   &-border {
-    border: 1px solid var(--anu-accent-dark);
+    border-color: var(--anu-accent-dark);
   }
 
   &-grad {
@@ -801,7 +801,7 @@ $default-gradient-lighten: 60%;
   }
 
   &-border {
-    border: 1px solid var(--anu-accent-normal);
+    border-color: var(--anu-accent-normal);
   }
 
   &-grad {
@@ -837,7 +837,7 @@ $default-gradient-lighten: 60%;
   }
 
   &-border {
-    border: 1px solid var(--anu-accent-light);
+    border-color: var(--anu-accent-light);
   }
 
   &-grad {
@@ -873,7 +873,7 @@ $default-gradient-lighten: 60%;
   }
 
   &-border {
-    border: 1px solid var(--anu-accent-lighter);
+    border-color: var(--anu-accent-lighter);
   }
 
   &-grad {
@@ -909,7 +909,7 @@ $default-gradient-lighten: 60%;
   }
 
   &-border {
-    border: 1px solid var(--anu-accent-lightest);
+    border-color: var(--anu-accent-lightest);
   }
 
   &-grad {
@@ -945,7 +945,7 @@ $default-gradient-lighten: 60%;
   }
 
   &-border {
-    border: 1px solid var(--anu-accent-deep-light);
+    border-color: var(--anu-accent-deep-light);
   }
 
   &-grad {
@@ -966,330 +966,6 @@ $default-gradient-lighten: 60%;
     &-v {
       @include gradient(
         $grad-color: var(--anu-accent-deep-light),
-        $angle: 0deg,
-        $lighten: $default-gradient-lighten
-      );
-    }
-  }
-}
-
-.background-deep-dark {
-  color: var(--anu-background-deep-dark);
-
-  &-bg {
-    background-color: var(--anu-background-deep-dark);
-  }
-
-  &-border {
-    border: 1px solid var(--anu-background-deep-dark);
-  }
-
-  &-grad {
-    @include gradient(
-      $grad-color: var(--anu-background-deep-dark),
-      $angle: 45deg,
-      $lighten: $default-gradient-lighten
-    );
-
-    &-h {
-      @include gradient(
-        $grad-color: var(--anu-background-deep-dark),
-        $angle: 90deg,
-        $lighten: $default-gradient-lighten
-      );
-    }
-
-    &-v {
-      @include gradient(
-        $grad-color: var(--anu-background-deep-dark),
-        $angle: 0deg,
-        $lighten: $default-gradient-lighten
-      );
-    }
-  }
-}
-
-.background-darkest {
-  color: var(--anu-background-darkest);
-
-  &-bg {
-    background-color: var(--anu-background-darkest);
-  }
-
-  &-border {
-    border: 1px solid var(--anu-background-darkest);
-  }
-
-  &-grad {
-    @include gradient(
-      $grad-color: var(--anu-background-darkest),
-      $angle: 45deg,
-      $lighten: $default-gradient-lighten
-    );
-
-    &-h {
-      @include gradient(
-        $grad-color: var(--anu-background-darkest),
-        $angle: 90deg,
-        $lighten: $default-gradient-lighten
-      );
-    }
-
-    &-v {
-      @include gradient(
-        $grad-color: var(--anu-background-darkest),
-        $angle: 0deg,
-        $lighten: $default-gradient-lighten
-      );
-    }
-  }
-}
-
-.background-darker {
-  color: var(--anu-background-darker);
-
-  &-bg {
-    background-color: var(--anu-background-darker);
-  }
-
-  &-border {
-    border: 1px solid var(--anu-background-darker);
-  }
-
-  &-grad {
-    @include gradient(
-      $grad-color: var(--anu-background-darker),
-      $angle: 45deg,
-      $lighten: $default-gradient-lighten
-    );
-
-    &-h {
-      @include gradient(
-        $grad-color: var(--anu-background-darker),
-        $angle: 90deg,
-        $lighten: $default-gradient-lighten
-      );
-    }
-
-    &-v {
-      @include gradient(
-        $grad-color: var(--anu-background-darker),
-        $angle: 0deg,
-        $lighten: $default-gradient-lighten
-      );
-    }
-  }
-}
-
-.background-dark {
-  color: var(--anu-background-dark);
-
-  &-bg {
-    background-color: var(--anu-background-dark);
-  }
-
-  &-border {
-    border: 1px solid var(--anu-background-dark);
-  }
-
-  &-grad {
-    @include gradient(
-      $grad-color: var(--anu-background-dark),
-      $angle: 45deg,
-      $lighten: $default-gradient-lighten
-    );
-
-    &-h {
-      @include gradient(
-        $grad-color: var(--anu-background-dark),
-        $angle: 90deg,
-        $lighten: $default-gradient-lighten
-      );
-    }
-
-    &-v {
-      @include gradient(
-        $grad-color: var(--anu-background-dark),
-        $angle: 0deg,
-        $lighten: $default-gradient-lighten
-      );
-    }
-  }
-}
-
-.background-normal {
-  color: var(--anu-background-normal);
-
-  &-bg {
-    background-color: var(--anu-background-normal);
-  }
-
-  &-border {
-    border: 1px solid var(--anu-background-normal);
-  }
-
-  &-grad {
-    @include gradient(
-      $grad-color: var(--anu-background-normal),
-      $angle: 45deg,
-      $lighten: $default-gradient-lighten
-    );
-
-    &-h {
-      @include gradient(
-        $grad-color: var(--anu-background-normal),
-        $angle: 90deg,
-        $lighten: $default-gradient-lighten
-      );
-    }
-
-    &-v {
-      @include gradient(
-        $grad-color: var(--anu-background-normal),
-        $angle: 0deg,
-        $lighten: $default-gradient-lighten
-      );
-    }
-  }
-}
-
-.background-light {
-  color: var(--anu-background-light);
-
-  &-bg {
-    background-color: var(--anu-background-light);
-  }
-
-  &-border {
-    border: 1px solid var(--anu-background-light);
-  }
-
-  &-grad {
-    @include gradient(
-      $grad-color: var(--anu-background-light),
-      $angle: 45deg,
-      $lighten: $default-gradient-lighten
-    );
-
-    &-h {
-      @include gradient(
-        $grad-color: var(--anu-background-light),
-        $angle: 90deg,
-        $lighten: $default-gradient-lighten
-      );
-    }
-
-    &-v {
-      @include gradient(
-        $grad-color: var(--anu-background-light),
-        $angle: 0deg,
-        $lighten: $default-gradient-lighten
-      );
-    }
-  }
-}
-
-.background-lighter {
-  color: var(--anu-background-lighter);
-
-  &-bg {
-    background-color: var(--anu-background-lighter);
-  }
-
-  &-border {
-    border: 1px solid var(--anu-background-lighter);
-  }
-
-  &-grad {
-    @include gradient(
-      $grad-color: var(--anu-background-lighter),
-      $angle: 45deg,
-      $lighten: $default-gradient-lighten
-    );
-
-    &-h {
-      @include gradient(
-        $grad-color: var(--anu-background-lighter),
-        $angle: 90deg,
-        $lighten: $default-gradient-lighten
-      );
-    }
-
-    &-v {
-      @include gradient(
-        $grad-color: var(--anu-background-lighter),
-        $angle: 0deg,
-        $lighten: $default-gradient-lighten
-      );
-    }
-  }
-}
-
-.background-lightest {
-  color: var(--anu-background-lightest);
-
-  &-bg {
-    background-color: var(--anu-background-lightest);
-  }
-
-  &-border {
-    border: 1px solid var(--anu-background-lightest);
-  }
-
-  &-grad {
-    @include gradient(
-      $grad-color: var(--anu-background-lightest),
-      $angle: 45deg,
-      $lighten: $default-gradient-lighten
-    );
-
-    &-h {
-      @include gradient(
-        $grad-color: var(--anu-background-lightest),
-        $angle: 90deg,
-        $lighten: $default-gradient-lighten
-      );
-    }
-
-    &-v {
-      @include gradient(
-        $grad-color: var(--anu-background-lightest),
-        $angle: 0deg,
-        $lighten: $default-gradient-lighten
-      );
-    }
-  }
-}
-
-.background-deep-light {
-  color: var(--anu-background-deep-light);
-
-  &-bg {
-    background-color: var(--anu-background-deep-light);
-  }
-
-  &-border {
-    border: 1px solid var(--anu-background-deep-light);
-  }
-
-  &-grad {
-    @include gradient(
-      $grad-color: var(--anu-background-deep-light),
-      $angle: 45deg,
-      $lighten: $default-gradient-lighten
-    );
-
-    &-h {
-      @include gradient(
-        $grad-color: var(--anu-background-deep-light),
-        $angle: 90deg,
-        $lighten: $default-gradient-lighten
-      );
-    }
-
-    &-v {
-      @include gradient(
-        $grad-color: var(--anu-background-deep-light),
         $angle: 0deg,
         $lighten: $default-gradient-lighten
       );

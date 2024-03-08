@@ -1,4 +1,4 @@
-@import 'mixins';
+@import "mixins";
 
 .annuTheme {
   display: flex;
@@ -8,7 +8,7 @@
 
   &_navs {
     width: 100%;
-    background-color: var(--anu-background);
+    background-color: var(--anu-primary-normal);
   }
 
   &_overview {
@@ -26,7 +26,6 @@
 
       .btn {
         margin-top: 1rem;
-        ;
       }
     }
   }
@@ -58,7 +57,7 @@
     }
   }
 
-  &_palette+&_palette {
+  &_palette + &_palette {
     padding-left: 1rem;
   }
 
@@ -66,5 +65,4 @@
     padding: 1rem;
     width: 100%;
   }
-
 }

@@ -1,63 +1,63 @@
 $size-sm: 1rem;
-$size-md: 2rem;
-$size-lg: 3rem;
+$size-md: 1.5rem;
+$size-lg: 2rem;
 
 :host {
+  display: flex;
+  flex-direction: row;
+  flex-flow: nowrap;
+  cursor: pointer;
+  align-items: center;
+  justify-content: flex-start;
+  width: max-content;
+  font-size: #{$size-sm};
+
+  & > div {
     display: flex;
-    flex-direction: row;
-    flex-flow: nowrap;
-    cursor: pointer;
+  }
+
+  &.hamburger-dropdown {
+    justify-content: space-between;
+  }
+
+  .hamburger-icon {
+    width: #{$size-sm + 1rem};
+    height: #{$size-sm + 1rem};
+    display: flex;
+    justify-content: center;
     align-items: center;
-    justify-content: flex-start;
-    width: max-content;
+    line-height: 1;
+    transition: transform 0.2s ease-out;
+  }
+
+  &:hover {
+    .hamburger-icon {
+      border: 1px solid var(--anu-accent-normal);
+    }
+  }
+
+  &.size-sm {
     font-size: #{$size-sm};
 
-    &>div {
-        display: flex;
+    .hamburger-icon {
+      width: #{$size-sm + 1rem};
+      height: #{$size-sm + 1rem};
     }
-
-    &.hamburger-dropdown {
-        justify-content: space-between;
-    }
+  }
+  &.size-md {
+    font-size: #{$size-md};
 
     .hamburger-icon {
-        width: #{$size-sm + 1rem};
-        height: #{$size-sm + 1rem};
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        line-height: 1;
-        transition: transform 0.2s ease-out;
+      width: #{$size-md + 1rem};
+      height: #{$size-md + 1rem};
     }
+  }
+  &.size-lg {
+    font-size: #{$size-lg};
 
-    &:hover {
-        .hamburger-icon {
-            border: 1px solid var(--anu-background-lightest);
-        }
+    .hamburger-icon {
+      width: #{$size-lg + 1rem};
+      height: #{$size-lg + 1rem};
     }
-
-    &.size-sm {
-        font-size: #{$size-sm};
-
-        .hamburger-icon {
-            width: #{$size-sm + 1rem};
-            height: #{$size-sm + 1rem};
-        }
-    }
-    &.size-md {
-        font-size: #{$size-md};
-
-        .hamburger-icon {
-            width: #{$size-md + 1rem};
-            height: #{$size-md + 1rem};
-        }
-    }
-    &.size-lg {
-        font-size: #{$size-lg};
-
-        .hamburger-icon {
-            width: #{$size-lg + 1rem};
-            height: #{$size-lg + 1rem};
-        }
-    }
+  }
 }

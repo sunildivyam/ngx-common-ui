@@ -31,6 +31,11 @@ export class MenuComponent implements OnInit, AfterViewInit {
   @Input() logoWidth: string = "auto";
   @Input() menuClassNames: Array<string> = [];
   @Input() menuItemClassNames: Array<string> = ["shadow", "border"];
+  @Input() enableSeparator: boolean = false;
+  @Input() separatorClassNames: Array<string> = [
+    "border-left",
+    "primary-darker-border",
+  ];
 
   @Output() selected = new EventEmitter<MenuItem>();
   @Output() openStatusChanged = new EventEmitter<boolean>();
