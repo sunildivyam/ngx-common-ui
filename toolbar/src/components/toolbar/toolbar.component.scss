@@ -1,4 +1,6 @@
-$icon-mage-size: 2rem;
+$icon-image-size-sm: 1rem;
+$icon-image-size-md: 1.5rem;
+$icon-image-size-lg: 2rem;
 
 nav.annuToolbar {
   display: flex;
@@ -19,7 +21,7 @@ nav.annuToolbar {
 
       a {
         display: inline-block;
-        padding: 0.3rem 1rem;
+        padding: 0.3rem;
         color: var(--anu-accent-darkest);
         vertical-align: middle;
 
@@ -28,10 +30,25 @@ nav.annuToolbar {
         }
 
         img {
-          width: #{$icon-mage-size};
-          height: #{$icon-mage-size};
+          width: #{$icon-image-size-sm};
+          height: #{$icon-image-size-sm};
           vertical-align: middle;
           margin: 0;
+
+          &.size {
+            &-sm {
+              width: #{$icon-image-size-sm};
+              height: #{$icon-image-size-sm};
+            }
+            &-md {
+              width: #{$icon-image-size-md};
+              height: #{$icon-image-size-md};
+            }
+            &-lg {
+              width: #{$icon-image-size-lg};
+              height: #{$icon-image-size-lg};
+            }
+          }
         }
       }
     }
