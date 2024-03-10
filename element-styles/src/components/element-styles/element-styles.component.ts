@@ -38,6 +38,8 @@ export class ElementStylesComponent implements OnInit, OnChanges {
   alignmentItems = [];
   bgItems = [];
   bgGradItems = [];
+  bgHGradItems = [];
+  bgVGradItems = [];
   textColorItems = [];
   shadowItems = [];
 
@@ -55,6 +57,8 @@ export class ElementStylesComponent implements OnInit, OnChanges {
     this.shadowItems = this.utilsService.deepCopy(SHADOW_STYLE_ITEMS);
     this.bgItems = this.getColorItems('bg');
     this.bgGradItems = this.getColorItems('grad');
+    this.bgHGradItems = this.getColorItems('grad-h');
+    this.bgVGradItems = this.getColorItems('grad-v');
     this.textColorItems = this.getColorItems();
   }
 
@@ -74,16 +78,18 @@ export class ElementStylesComponent implements OnInit, OnChanges {
     return items;
   }
 
+  private prepareSelectedItems(): void {
+    this.selectedItems =
+      this.selectedStyles?.map((itm) => ({
+        id: itm,
+      })) || [];
+  }
   ngOnInit(): void {
-    this.selectedItems = this.selectedStyles.map((itm) => ({
-      id: itm,
-    }));
+    this.prepareSelectedItems();
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    this.selectedItems = this.selectedStyles.map((itm) => ({
-      id: itm,
-    }));
+    this.prepareSelectedItems();
   }
 
   public onChange(selectedItems: Array<any>): void {

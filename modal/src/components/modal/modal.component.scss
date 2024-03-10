@@ -1,4 +1,4 @@
-@import "mixins";
+@import 'mixins';
 
 :host {
   position: fixed;
@@ -16,7 +16,7 @@
 
   .annuModal {
     padding: 1rem;
-    background-color: var(--anu-secondary-deep-light);
+    background-color: var(--anu-accent-deep-light);
     border-radius: var(--anu-border-radius);
 
     @include large {
