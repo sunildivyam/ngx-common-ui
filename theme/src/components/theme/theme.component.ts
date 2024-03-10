@@ -1,32 +1,32 @@
-import { Component } from "@angular/core";
-import { ThemeService } from "../../services/theme.service";
-import { Theme } from "../../interfaces/theme.interface";
-import { Typography } from "@annuadvent/ngx-common-ui/typography";
+import { Component } from '@angular/core';
+import { ThemeService } from '../../services/theme.service';
+import { Theme } from '../../interfaces/theme.interface';
+import { Typography } from '@annuadvent/ngx-common-ui/typography';
 import {
   ColorPalette,
   PaletteColor,
-} from "../../interfaces/color-palette.interface";
-import { Tab } from "@annuadvent/ngx-common-ui/tabs";
+} from '../../interfaces/color-palette.interface';
+import { Tab } from '@annuadvent/ngx-common-ui/tabs';
 import {
   DEFAULT_THEME_JSON,
   TABS,
   TYPOGRAPHY,
-} from "../../constants/theme.constants";
+} from '../../constants/theme.constants';
 
 /**
  *
  */
 @Component({
-  selector: "anu-theme",
-  templateUrl: "./theme.component.html",
-  styleUrls: ["./theme.component.scss"],
+  selector: 'anu-theme',
+  templateUrl: './theme.component.html',
+  styleUrls: ['./theme.component.scss'],
 })
 export class ThemeComponent {
   theme: Theme = { ...DEFAULT_THEME_JSON };
   tabs: Array<Tab> = [...TABS];
   selectedTab: Tab = null;
-  themeName: string = "";
-  themeFromJson: string = "";
+  themeName: string = '';
+  themeFromJson: string = '';
   isThemeFromJson: boolean = false;
   isJsonError: boolean = false;
   typography: Array<Typography> = [...TYPOGRAPHY];
@@ -36,7 +36,7 @@ export class ThemeComponent {
     this.selectedTab = this.tabs.find((tb) => tb.active === true);
 
     this.testAccentColors =
-      this.theme.colorPalettes.find((cp) => cp.name === "accent")?.colors || [];
+      this.theme.colorPalettes.find((cp) => cp.name === 'accent')?.colors || [];
   }
 
   public tabChanged(tab: Tab): void {
@@ -48,8 +48,8 @@ export class ThemeComponent {
       if (cp.name === colorPalette.name) cp = colorPalette;
     });
 
-    if (colorPalette.name === "accent") {
-      this.testAccentColors = colorPalette.colors;
+    if (colorPalette.name === 'accent') {
+      setTimeout(() => (this.testAccentColors = colorPalette.colors));
     }
   };
 

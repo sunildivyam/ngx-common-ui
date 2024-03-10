@@ -168,6 +168,8 @@ Following is a list of all available CSS classes available for theming your webs
 **Shadow**
 
 - `.shadow` - gives a shadow to element
+- `.shadow-half` - gives a smaller shadow to element
+- `.shadow-double` - gives a double size shadow to element
 
 **Disable text selection**
 

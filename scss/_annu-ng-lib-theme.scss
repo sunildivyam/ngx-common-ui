@@ -1,11 +1,11 @@
 // @import "normalize";
-@import "mixins";
-@import "color-classes";
+@import 'mixins';
+@import 'color-classes';
 // Import all fonts here, that has been refered from theme files.
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap"); // Open Sans
-@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"); // Lato
-@import "firebaseui"; // imports Robnoto font too
-@import "prism-okaidia";
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap'); // Open Sans
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap'); // Lato
+@import 'firebaseui'; // imports Robnoto font too
+@import 'prism-okaidia';
 
 // Use any of the Prismjs themes for code highlighting:
 // @import "~prismjs/themes/prism";
@@ -247,10 +247,10 @@ label {
   font-weight: bold;
 }
 
-input[type="text"],
-input[type="number"],
-input[type="email"],
-input[type="password"],
+input[type='text'],
+input[type='number'],
+input[type='email'],
+input[type='password'],
 textarea,
 select,
 option {
@@ -266,13 +266,13 @@ option {
 }
 
 // Checkbox styling with border & with no border
-input[type="checkbox"] {
+input[type='checkbox'] {
   &:before {
     position: relative;
     display: block;
     width: #{$checkbox_size};
     height: #{$checkbox_size};
-    content: "";
+    content: '';
     background: var(--anu-primary-deep-light);
     border: 1px solid var(--anu-primary-normal);
     color: var(--anu-primary-normal);
@@ -297,7 +297,7 @@ input[type="checkbox"] {
 
   &:checked:after {
     background: var(--anu-primary-deep-light);
-    content: "\2713";
+    content: '\2713';
     font-size: #{$checkbox_size};
   }
 
@@ -318,14 +318,14 @@ input[type="checkbox"] {
   }
 }
 
-input.no-border[type="checkbox"] {
+input.no-border[type='checkbox'] {
   &:before {
     border: none;
   }
 
   &:after {
     border: none;
-    content: "\2713";
+    content: '\2713';
     font-size: #{$checkbox_size};
     color: var(--anu-accent-light);
   }
@@ -343,7 +343,7 @@ input.no-border[type="checkbox"] {
 }
 
 // Input tyepe "range" (Slider)
-input[type="range"] {
+input[type='range'] {
   margin: 1.5em 0;
   appearance: none;
   -webkit-appearance: none;
@@ -405,7 +405,7 @@ input[type="range"] {
   flex-wrap: wrap;
 }
 
-[class*="col-"] {
+[class*='col-'] {
   transition: width 0.2s;
 }
 
@@ -922,6 +922,14 @@ input[type="range"] {
 
 .shadow {
   box-shadow: 0.1rem 0.1rem 0.5rem 0.1rem var(--anu-secondary-normal);
+
+  &-half {
+    box-shadow: 0.05rem 0.05rem 0.5rem 0.05rem var(--anu-secondary-normal);
+  }
+
+  &-double {
+    box-shadow: 0.2rem 0.2rem 0.5rem 0.2rem var(--anu-secondary-normal);
+  }
 }
 
 :not(pre) > code,
