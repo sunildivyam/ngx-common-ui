@@ -26,15 +26,31 @@
 >
   <anu-collapsible-header>Alignment</anu-collapsible-header>
   <anu-collapsible-content>
-    <anu-multi-select-box
-      class="spacing-v"
-      [items]="alignmentItems"
-      keyField="id"
-      labelField="label"
-      [selectedItems]="selectedItems"
-      (changed)="onChange($event)"
-    >
-    </anu-multi-select-box>
+    <div class="row border-bottom secondary-lightest-border">
+      <label class="spacing">Content Alignment</label>
+      <anu-multi-select-box
+        class="spacing-v"
+        [items]="alignmentItems"
+        keyField="id"
+        labelField="label"
+        [selectedItems]="selectedItems"
+        (changed)="onChange($event)"
+      >
+      </anu-multi-select-box>
+    </div>
+
+    <div class="row border-bottom secondary-lightest-border">
+      <label class="spacing">Text Alignment</label>
+      <anu-multi-select-box
+        class="spacing-v"
+        [items]="textAlignmentItems"
+        keyField="id"
+        labelField="label"
+        [selectedItems]="selectedItems"
+        (changed)="onChange($event)"
+      >
+      </anu-multi-select-box>
+    </div>
   </anu-collapsible-content>
 </anu-collapsible>
 

@@ -62,3 +62,30 @@ export const ALIGNMENT_STYLE_ITEMS = [
     label: 'Center',
   },
 ];
+
+export const TEXT_ALIGNMENT_STYLE_ITEMS = [
+  {
+    id: 'text-left',
+    label: 'Left',
+  },
+  {
+    id: 'text-right',
+    label: 'Right',
+  },
+  {
+    id: 'text-top',
+    label: 'Top',
+  },
+  {
+    id: 'text-bottom',
+    label: 'Bottom',
+  },
+  {
+    id: 'text-middle',
+    label: 'Middle',
+  },
+  {
+    id: 'text-center',
+    label: 'Center',
+  },
+];

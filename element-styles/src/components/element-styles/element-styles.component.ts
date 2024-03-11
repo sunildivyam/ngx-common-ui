@@ -13,6 +13,7 @@ import {
   LAYOUT_STYLE_ITEMS,
   ALIGNMENT_STYLE_ITEMS,
   SHADOW_STYLE_ITEMS,
+  TEXT_ALIGNMENT_STYLE_ITEMS,
 } from '../../constants/element-styles.constants';
 import {
   COLOR_PALETTES,
@@ -36,6 +37,7 @@ export class ElementStylesComponent implements OnInit, OnChanges {
 
   layoutItems = [];
   alignmentItems = [];
+  textAlignmentItems = [];
   bgItems = [];
   bgGradItems = [];
   bgHGradItems = [];
@@ -54,6 +56,9 @@ export class ElementStylesComponent implements OnInit, OnChanges {
   private initItems() {
     this.layoutItems = this.utilsService.deepCopy(LAYOUT_STYLE_ITEMS);
     this.alignmentItems = this.utilsService.deepCopy(ALIGNMENT_STYLE_ITEMS);
+    this.textAlignmentItems = this.utilsService.deepCopy(
+      TEXT_ALIGNMENT_STYLE_ITEMS
+    );
     this.shadowItems = this.utilsService.deepCopy(SHADOW_STYLE_ITEMS);
     this.bgItems = this.getColorItems('bg');
     this.bgGradItems = this.getColorItems('grad');
