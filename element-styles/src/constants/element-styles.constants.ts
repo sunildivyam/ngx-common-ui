@@ -11,6 +11,14 @@ export const LAYOUT_STYLE_ITEMS = [
     id: 'row',
     label: 'Row',
   },
+  {
+    id: 'spacing',
+    label: 'Inner Spacing',
+  },
+  {
+    id: 'spacing-around',
+    label: 'Spacing Around',
+  },
 ];
 
 export const SHADOW_STYLE_ITEMS = [
