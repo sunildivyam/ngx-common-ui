@@ -54,11 +54,16 @@ body {
 }
 
 a {
-  color: var(--anu-accent-normal);
   text-decoration: none;
+  color: var(--anu-accent-normal);
 
   &:hover {
     color: var(--anu-accent-lighter);
+  }
+
+  &:visited,
+  &:active {
+    color: var(--anu-accent-normal);
   }
 }
 
@@ -176,7 +181,6 @@ h6 {
   margin-top: 0;
   margin-bottom: 0.1rem;
   font-weight: bold;
-  color: var(--anu-accanr-normal);
 
   @include contenteditableStyle;
 }
@@ -184,7 +188,6 @@ h6 {
 p {
   margin-bottom: 0.1rem;
   font-size: 1rem;
-  color: var(--anu-accent-normal);
 
   @include contenteditableStyle;
 }
@@ -221,8 +224,6 @@ table {
 
   th {
     font-weight: bold;
-    background-color: var(--anu-primary-normal);
-    color: var(--anu-accent-dark);
   }
 
   th,

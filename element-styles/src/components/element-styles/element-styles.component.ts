@@ -67,9 +67,9 @@ export class ElementStylesComponent implements OnInit, OnChanges {
     COLOR_PALETTES.forEach((cp) => {
       PALETTE_SHADES.forEach((ps) => {
         items.push({
-          id: `${cp.name}${this.utilsService.camelCaseToDashCase(
-            ps
-          )}-${postFix}`,
+          id: `${cp.name}${this.utilsService.camelCaseToDashCase(ps)}${
+            postFix ? '-' + postFix : ''
+          }`,
           label: `${cp.name} ${ps}`,
         });
       });
