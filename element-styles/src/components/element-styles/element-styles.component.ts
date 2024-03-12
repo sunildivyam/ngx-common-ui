@@ -18,7 +18,7 @@ import {
 import {
   COLOR_PALETTES,
   PALETTE_SHADES,
-} from '@annuadvent/ngx-common-ui/theme/src/constants/theme.constants';
+} from '@annuadvent/ngx-common-ui/theme';
 
 /**
  * ElementStylesComponent component allows to choose style classes from a list.

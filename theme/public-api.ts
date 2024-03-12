@@ -5,3 +5,4 @@ export * from './src/interfaces/color-palette.interface';
 export * from './src/theme.module';
 export * from './src/services/theme.service';
 export * from './src/constants/themes';
+export * from './src/constants/theme.constants';
