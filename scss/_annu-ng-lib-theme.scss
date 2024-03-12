@@ -58,12 +58,7 @@ a {
   color: var(--anu-accent-normal);
 
   &:hover {
-    color: var(--anu-accent-lighter);
-  }
-
-  &:visited,
-  &:active {
-    color: var(--anu-accent-normal);
+    color: var(--anu-primary-normal);
   }
 }
 
