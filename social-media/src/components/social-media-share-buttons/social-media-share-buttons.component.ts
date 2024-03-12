@@ -1,4 +1,4 @@
-import { Component, EventEmitter, HostBinding, Inject, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
+import { Component, EventEmitter, HostBinding, Inject, Input, OnChanges, OnInit, Output } from '@angular/core';
 import { SocialMediaShareButton } from '../../interfaces/social-media.interface';
 import { SOCIAL_MEDIA_SHARE_BUTTONS } from '../../constants/social-media.constants';
 import { SocialMediaButtonsEnum } from '../../enums/social-media.enums';
@@ -63,14 +63,14 @@ export class SocialMediaShareButtonsComponent implements OnInit, OnChanges {
   }
 
   public updateShareButtonUrls(): void {
-    this.buttons = this.buttons.map(shareBtn => {
-      const url = this.document.head.querySelector('link[rel="canonical"')?.getAttribute('href') ||
-        this.appConfigService.config.apiBaseUrl + this.router.url;
-      const title = this.document.head.querySelector('meta[name = "title"')?.getAttribute('content') || url;
-      const description = this.document.head.querySelector('meta[name = "description"')?.getAttribute('content') || url;
-      const imageUrl = this.document.head.querySelector('meta[property = "og:image"')?.getAttribute('content') || '';
-      const siteName = this.document.head.querySelector('meta[property = "og:site_name"')?.getAttribute('content') || '';
+    const url = this.document.head.querySelector('link[rel="canonical"]')?.getAttribute('href') ||
+      this.appConfigService.config.apiBaseUrl + this.router.url;
+    const title = this.document.head.querySelector('meta[name="title"]')?.getAttribute('content') || url;
+    const description = this.document.head.querySelector('meta[name="description"]')?.getAttribute('content') || url;
+    const imageUrl = this.document.head.querySelector('meta[property="og:image"]')?.getAttribute('content') || '';
+    const siteName = this.document.head.querySelector('meta[property="og:site_name"]')?.getAttribute('content') || '';
 
+    this.buttons = this.buttons.map(shareBtn => {
       let paramsStr = '';
       const btn = this.utilsService.deepCopy(SOCIAL_MEDIA_SHARE_BUTTONS.find(bt => bt.type === shareBtn.type));
 

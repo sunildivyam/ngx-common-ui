@@ -1,6 +1,6 @@
 {
 	"name": "toolbar",
-	"version": "0.0.1",
+	"version": "1.0.3",
 	"license": "MIT",
 	"description": "Angular @annuadvent/ngx-common-ui/toolbar components library module",
 	"homepage": "https://github.com/sunildivyam/ngx-common-ui/toolbar",

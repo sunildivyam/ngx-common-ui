@@ -1,38 +1,38 @@
 @import 'mixins';
 
 :host {
-    position: fixed;
-    display: none;
-    flex-direction: column;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    overflow-y: auto;
-    background-color: var(--anu-background-lightest);
-    justify-content: flex-start;
-    align-items: center;
-    z-index: #{$menu-modal};
+  position: fixed;
+  display: none;
+  flex-direction: column;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  overflow-y: auto;
+  background-color: var(--anu-secondary-lightest);
+  justify-content: flex-start;
+  align-items: center;
+  z-index: #{$menu-modal};
 
-    .annuModal {
-        padding: 1rem;
-        background-color: var(--anu-background-deep-light);
-        border-radius: var(--anu-border-radius);
+  .annuModal {
+    padding: 1rem;
+    background-color: var(--anu-accent-deep-light);
+    border-radius: var(--anu-border-radius);
 
-        @include large {
-            margin: 2rem 0;
-        }
-
-        @include medium {
-            margin: 1rem 0;
-        }
-
-        @include small {
-            margin: 0.5rem 0;
-        }
+    @include large {
+      margin: 2rem 0;
     }
 
-    &.modal-opened {
-        display: flex;
+    @include medium {
+      margin: 1rem 0;
     }
+
+    @include small {
+      margin: 0.5rem 0;
+    }
+  }
+
+  &.modal-opened {
+    display: flex;
+  }
 }

@@ -1,0 +1,164 @@
+<anu-collapsible
+  class="spacing-around-v"
+  [collapsed]="true"
+  [hamBurgerClassNames]="['primary-normal-grad', 'spacing-h', 'size-md']"
+  [isDropdownStyle]="true"
+>
+  <anu-collapsible-header>Layout</anu-collapsible-header>
+  <anu-collapsible-content>
+    <anu-multi-select-box
+      class="spacing-v"
+      [items]="layoutItems"
+      keyField="id"
+      labelField="label"
+      [selectedItems]="selectedItems"
+      (changed)="onChange($event)"
+    >
+    </anu-multi-select-box>
+  </anu-collapsible-content>
+</anu-collapsible>
+
+<anu-collapsible
+  class="spacing-around-v"
+  [collapsed]="true"
+  [hamBurgerClassNames]="['primary-normal-grad', 'spacing-h', 'size-md']"
+  [isDropdownStyle]="true"
+>
+  <anu-collapsible-header>Alignment</anu-collapsible-header>
+  <anu-collapsible-content>
+    <div class="row border-bottom secondary-lightest-border">
+      <label class="spacing">Content Alignment</label>
+      <anu-multi-select-box
+        class="spacing-v"
+        [items]="alignmentItems"
+        keyField="id"
+        labelField="label"
+        [selectedItems]="selectedItems"
+        (changed)="onChange($event)"
+      >
+      </anu-multi-select-box>
+    </div>
+
+    <div class="row border-bottom secondary-lightest-border">
+      <label class="spacing">Text Alignment</label>
+      <anu-multi-select-box
+        class="spacing-v"
+        [items]="textAlignmentItems"
+        keyField="id"
+        labelField="label"
+        [selectedItems]="selectedItems"
+        (changed)="onChange($event)"
+      >
+      </anu-multi-select-box>
+    </div>
+  </anu-collapsible-content>
+</anu-collapsible>
+
+<anu-collapsible
+  class="spacing-around-v"
+  [collapsed]="true"
+  [hamBurgerClassNames]="['primary-normal-grad', 'spacing-h', 'size-md']"
+  [isDropdownStyle]="true"
+>
+  <anu-collapsible-header>Shadow</anu-collapsible-header>
+  <anu-collapsible-content>
+    <anu-multi-select-box
+      class="spacing-v"
+      [items]="shadowItems"
+      keyField="id"
+      labelField="label"
+      [selectedItems]="selectedItems"
+      (changed)="onChange($event)"
+    >
+    </anu-multi-select-box>
+  </anu-collapsible-content>
+</anu-collapsible>
+
+<anu-collapsible
+  class="spacing-around-v"
+  [collapsed]="false"
+  [hamBurgerClassNames]="['primary-normal-grad', 'spacing-h', 'size-md']"
+  [isDropdownStyle]="true"
+>
+  <anu-collapsible-header>Backgrounds</anu-collapsible-header>
+  <anu-collapsible-content>
+    <anu-multi-select-box
+      class="spacing-v"
+      [items]="bgItems"
+      keyField="id"
+      labelField="label"
+      [selectedItems]="selectedItems"
+      (changed)="onChange($event)"
+    >
+    </anu-multi-select-box>
+  </anu-collapsible-content>
+</anu-collapsible>
+
+<anu-collapsible
+  class="spacing-around-v"
+  [collapsed]="false"
+  [hamBurgerClassNames]="['primary-normal-grad', 'spacing-h', 'size-md']"
+  [isDropdownStyle]="true"
+>
+  <anu-collapsible-header>Gradients</anu-collapsible-header>
+  <anu-collapsible-content>
+    <div class="row border-bottom secondary-lightest-border">
+      <label class="spacing">Diagonal Gradient</label>
+      <anu-multi-select-box
+        class="spacing-v"
+        [items]="bgGradItems"
+        keyField="id"
+        labelField="label"
+        [selectedItems]="selectedItems"
+        (changed)="onChange($event)"
+      >
+      </anu-multi-select-box>
+    </div>
+
+    <div class="row border-bottom secondary-lightest-border">
+      <label class="spacing">Horizontal Gradient</label>
+      <anu-multi-select-box
+        class="spacing-v"
+        [items]="bgHGradItems"
+        keyField="id"
+        labelField="label"
+        [selectedItems]="selectedItems"
+        (changed)="onChange($event)"
+      >
+      </anu-multi-select-box>
+    </div>
+
+    <div class="row border-bottom secondary-lightest-border">
+      <label class="spacing">Vertical Gradient</label>
+      <anu-multi-select-box
+        class="spacing-v"
+        [items]="bgVGradItems"
+        keyField="id"
+        labelField="label"
+        [selectedItems]="selectedItems"
+        (changed)="onChange($event)"
+      >
+      </anu-multi-select-box>
+    </div>
+  </anu-collapsible-content>
+</anu-collapsible>
+
+<anu-collapsible
+  class="spacing-around-v"
+  [collapsed]="false"
+  [hamBurgerClassNames]="['primary-normal-grad', 'spacing-h', 'size-md']"
+  [isDropdownStyle]="true"
+>
+  <anu-collapsible-header>Text Colors</anu-collapsible-header>
+  <anu-collapsible-content>
+    <anu-multi-select-box
+      class="spacing-v"
+      [items]="textColorItems"
+      keyField="id"
+      labelField="label"
+      [selectedItems]="selectedItems"
+      (changed)="onChange($event)"
+    >
+    </anu-multi-select-box>
+  </anu-collapsible-content>
+</anu-collapsible>

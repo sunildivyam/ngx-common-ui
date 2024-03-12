@@ -1,4 +1,11 @@
-<span class="breadcrumb__item" *ngFor="let seg of urlSegments; let index = index">
-    <span class="breadcrumb__separator">/</span> <a class="breadcrumb__link spacing-around-horizontal-half"
-        [routerLink]="urlSegments.slice(0, index + 1)">{{index === 0 ? 'Home' : seg}}</a>
+<span
+  class="breadcrumb__item"
+  *ngFor="let seg of urlSegments; let index = index"
+>
+  <span class="breadcrumb__separator">/</span>
+  <a
+    class="breadcrumb__link spacing-around-h-half"
+    [routerLink]="urlSegments.slice(0, index + 1)"
+    >{{ index === 0 ? "Home" : seg }}</a
+  >
 </span>

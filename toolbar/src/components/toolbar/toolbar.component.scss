@@ -1,56 +1,73 @@
-$icon-mage-size: 2rem;
+$icon-image-size-sm: 1rem;
+$icon-image-size-md: 1.5rem;
+$icon-image-size-lg: 2rem;
 
 nav.annuToolbar {
-    display: flex;
+  display: flex;
 
-    ul {
+  ul {
+    display: inline-block;
+    list-style-type: none;
+    white-space: nowrap;
+    width: max-content;
+    padding: 0;
+    margin: 0;
+    background-color: var(--anu-primary-normal);
+    border: 1px solid var(--anu-primary-darker);
+    border-radius: calc(var(--anu-border-radius) / 2);
+
+    li {
+      display: inline-block;
+
+      a {
         display: inline-block;
-        list-style-type: none;
-        white-space: nowrap;
-        width: max-content;
-        padding: 0;
-        margin: 0;
-        background-color: var(--anu-primary-lightest);
-        border: 1px solid var(--anu-primary-normal);
-        border-radius: calc(var(--anu-border-radius)/2);
+        padding: 0.3rem;
+        color: var(--anu-accent-darkest);
+        vertical-align: middle;
 
-        li {
-            display: inline-block;
+        &:hover {
+          background-color: var(--anu-primary-light);
+        }
 
-            a {
-                display: inline-block;
-                padding: 0.3rem 1rem;
-                color: var(--anu-accent-darkest);
-                vertical-align: middle;
+        img {
+          width: #{$icon-image-size-sm};
+          height: #{$icon-image-size-sm};
+          vertical-align: middle;
+          margin: 0;
 
-                &:hover {
-                    background-color: var(--anu-primary-light);
-                }
-
-                img {
-                    width: #{$icon-mage-size};
-                    height: #{$icon-mage-size};
-                    vertical-align: middle;
-                    margin: 0;
-                }
+          &.size {
+            &-sm {
+              width: #{$icon-image-size-sm};
+              height: #{$icon-image-size-sm};
             }
+            &-md {
+              width: #{$icon-image-size-md};
+              height: #{$icon-image-size-md};
+            }
+            &-lg {
+              width: #{$icon-image-size-lg};
+              height: #{$icon-image-size-lg};
+            }
+          }
         }
-
-        li + li {
-            border-left: 1px solid var(--anu-primary-light);
-        }
+      }
     }
 
-    &.vertical {
-        ul {
-            display: flex;
-            flex-direction: column;
-
-            li {
-                a {
-                    width: 100%;
-                }
-            }
-        }
+    li + li {
+      border-left: 1px solid var(--anu-primary-light);
     }
+  }
+
+  &.vertical {
+    ul {
+      display: flex;
+      flex-direction: column;
+
+      li {
+        a {
+          width: 100%;
+        }
+      }
+    }
+  }
 }

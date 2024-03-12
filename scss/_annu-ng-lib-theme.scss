@@ -1,10 +1,11 @@
-@import "normalize";
-@import "mixins";
+@import 'normalize';
+@import 'mixins';
 @import 'color-classes';
 // Import all fonts here, that has been refered from theme files.
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap');
-@import 'firebaseui';
-@import "prism-okaidia";
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap'); // Open Sans
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap'); // Lato
+@import 'firebaseui'; // imports Robnoto font too
+@import 'prism-okaidia';
 
 // Use any of the Prismjs themes for code highlighting:
 // @import "~prismjs/themes/prism";
@@ -25,6 +26,14 @@ html {
   line-height: var(--anu-line-height);
   letter-spacing: var(--anu-letter-spacing);
   scroll-behavior: smooth;
+
+  @include small {
+    font-size: 90%;
+  }
+
+  @include medium {
+    font-size: 80%;
+  }
 }
 
 body {
@@ -39,14 +48,14 @@ body {
   align-items: center;
   width: 100%;
 
-  &>* {
+  & > * {
     max-width: var(--anu-site-width);
   }
 }
 
 a {
-  color: var(--anu-primary-darkest);
   text-decoration: none;
+  color: var(--anu-accent-normal);
 
   &:hover {
     color: var(--anu-primary-normal);
@@ -58,7 +67,6 @@ a {
   color: var(--anu-accent-darker);
   background-color: var(--anu-primary-normal);
   border: solid 0.001em var(--anu-primary-dark);
-  border-radius: calc(var(--anu-border-radius)/2.5);
   font-size: 1rem;
   text-align: center;
   transition: color 0.2s, background-color 0.2s, border-color 0.2s;
@@ -68,7 +76,7 @@ a {
     color: var(--anu-accent-darkest);
     text-decoration: none;
     background-color: var(--anu-primary-light);
-    border-color: var(--anu-primary-normal);
+    border-color: var(--anu-primary-deep-dark);
   }
 
   &.secondary {
@@ -91,7 +99,6 @@ a {
     &:hover {
       color: var(--anu-accent-lightest);
       background-color: #{$success-hover};
-      ;
       border-color: var(--anu-primary-normal);
     }
   }
@@ -104,7 +111,6 @@ a {
     &:hover {
       color: var(--anu-accent-lightest);
       background-color: #{$warning-hover};
-      ;
       border-color: var(--anu-primary-normal);
     }
   }
@@ -117,7 +123,6 @@ a {
     &:hover {
       color: var(--anu-accent-lightest);
       background-color: #{$error-hover};
-      ;
       border-color: var(--anu-primary-normal);
     }
   }
@@ -130,7 +135,7 @@ a {
     pointer-events: none;
   }
 
-  +.btn {
+  + .btn {
     margin-left: 1rem;
   }
 
@@ -149,7 +154,7 @@ a {
     padding: 0.75rem;
     font-size: 0.9rem;
 
-    +.btn {
+    + .btn {
       margin-top: 1rem;
       margin-left: 0;
     }
@@ -171,7 +176,6 @@ h6 {
   margin-top: 0;
   margin-bottom: 0.1rem;
   font-weight: bold;
-  color: var(--anu-primary-darker);
 
   @include contenteditableStyle;
 }
@@ -179,7 +183,6 @@ h6 {
 p {
   margin-bottom: 0.1rem;
   font-size: 1rem;
-  color: var(--anu-accent-normal);
 
   @include contenteditableStyle;
 }
@@ -207,8 +210,6 @@ ul {
 }
 
 table {
-  display: block;
-  width: 100%;
   overflow: auto;
   word-break: normal;
   word-break: keep-all; // For Firefox to horizontally scroll wider tables.
@@ -216,14 +217,12 @@ table {
 
   th {
     font-weight: bold;
-    background-color: var(--anu-primary-normal);
-    color: var(--anu-accent-dark);
   }
 
   th,
   td {
     padding: 0.5rem 1rem;
-    border: 0.002rem solid var(--anu-background-dark);
+    border: 0.002rem solid var(--anu-primary-dark);
   }
 }
 
@@ -232,43 +231,42 @@ hr {
   height: 2px;
   padding: 0;
   margin: 1rem 0;
-  background-color: var(--anu-background-lighter);
+  background-color: var(--anu-primary-lighter);
   border: 0;
 }
 
 label {
   display: block;
   width: 100%;
-  padding: 1em 0;
   font-weight: bold;
 }
 
-input[type="text"],
-input[type="number"],
-input[type="email"],
-input[type="password"],
+input[type='text'],
+input[type='number'],
+input[type='email'],
+input[type='password'],
 textarea,
 select,
 option {
   display: block;
   width: 100%;
   padding: 1rem;
-  border: 1px solid var(--anu-primary-lighter);
+  border: 1px solid var(--anu-primary-dark);
   max-width: 100%;
 
   &:focus-visible {
-    outline-color: var(--anu-primary-normal)
+    outline-color: var(--anu-primary-darker);
   }
 }
 
 // Checkbox styling with border & with no border
-input[type="checkbox"] {
+input[type='checkbox'] {
   &:before {
     position: relative;
     display: block;
     width: #{$checkbox_size};
     height: #{$checkbox_size};
-    content: "";
+    content: '';
     background: var(--anu-primary-deep-light);
     border: 1px solid var(--anu-primary-normal);
     color: var(--anu-primary-normal);
@@ -314,7 +312,7 @@ input[type="checkbox"] {
   }
 }
 
-input.no-border[type=checkbox] {
+input.no-border[type='checkbox'] {
   &:before {
     border: none;
   }
@@ -338,6 +336,40 @@ input.no-border[type=checkbox] {
   }
 }
 
+// Input tyepe "range" (Slider)
+input[type='range'] {
+  margin: 1.5em 0;
+  appearance: none;
+  -webkit-appearance: none;
+  width: 100%;
+  height: 5px;
+  background: var(--anu-primary-normal);
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
+
+  &:hover {
+    opacity: 1;
+  }
+
+  &::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    background: var(--anu-primary-darker);
+    cursor: pointer;
+    border-radius: 50%;
+  }
+
+  &::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    background: var(--anu-primary-darker);
+    cursor: pointer;
+  }
+}
 
 //  Error/Success/Warining
 .error {
@@ -486,7 +518,7 @@ input.no-border[type=checkbox] {
     }
   }
 
-  &-horizontal {
+  &-h {
     padding-left: var(--anu-spacing);
     padding-right: var(--anu-spacing);
 
@@ -517,7 +549,7 @@ input.no-border[type=checkbox] {
     }
   }
 
-  &-vertical {
+  &-v {
     padding-top: var(--anu-spacing);
     padding-bottom: var(--anu-spacing);
 
@@ -573,7 +605,7 @@ input.no-border[type=checkbox] {
       }
     }
 
-    &-horizontal {
+    &-h {
       margin-left: var(--anu-spacing);
       margin-right: var(--anu-spacing);
 
@@ -592,7 +624,7 @@ input.no-border[type=checkbox] {
       &-md {
         @include medium {
           margin-left: #{$md-spacing};
-          margin-right: var(--anu-spacing)/2;
+          margin-right: var(--anu-spacing) / 2;
         }
       }
 
@@ -604,7 +636,7 @@ input.no-border[type=checkbox] {
       }
     }
 
-    &-vertical {
+    &-v {
       margin-top: var(--anu-spacing);
       margin-bottom: var(--anu-spacing);
 
@@ -659,7 +691,7 @@ input.no-border[type=checkbox] {
     }
   }
 
-  &-horizontal {
+  &-h {
     padding-left: 0 !important;
     padding-right: 0 !important;
 
@@ -685,7 +717,7 @@ input.no-border[type=checkbox] {
     }
   }
 
-  &-vertical {
+  &-v {
     padding-top: 0 !important;
     padding-bottom: 0 !important;
 
@@ -732,7 +764,7 @@ input.no-border[type=checkbox] {
       }
     }
 
-    &-horizontal {
+    &-h {
       margin-left: 0 !important;
       margin-right: 0 !important;
 
@@ -758,7 +790,7 @@ input.no-border[type=checkbox] {
       }
     }
 
-    &-vertical {
+    &-v {
       margin-top: 0 !important;
       margin-bottom: 0 !important;
 
@@ -883,16 +915,24 @@ input.no-border[type=checkbox] {
 }
 
 .shadow {
-  box-shadow: 0.1rem 0.1rem 0.5rem 0.1rem var(--anu-background-normal);
+  box-shadow: 0.1rem 0.1rem 0.5rem 0.1rem var(--anu-secondary-normal);
+
+  &-half {
+    box-shadow: 0.05rem 0.05rem 0.5rem 0.05rem var(--anu-secondary-normal);
+  }
+
+  &-double {
+    box-shadow: 0.2rem 0.2rem 0.5rem 0.2rem var(--anu-secondary-normal);
+  }
 }
 
-:not(pre)>code,
+:not(pre) > code,
 .code {
   background-color: var(--anu-accent-darker);
   color: var(--anu-accent-deep-light);
   padding-left: 0.5rem;
   padding-right: 0.5rem;
-  border-radius: calc(var(--anu-border-radius)/2);
+  border-radius: calc(var(--anu-border-radius) / 2);
 }
 
 .text {
@@ -900,15 +940,21 @@ input.no-border[type=checkbox] {
     text-align: center;
 
     &-sm {
-      text-align: center;
+      @include small {
+        text-align: center;
+      }
     }
 
     &-md {
-      text-align: center;
+      @include medium {
+        text-align: center;
+      }
     }
 
     &-lg {
-      text-align: center;
+      @include large {
+        text-align: center;
+      }
     }
   }
 
@@ -916,15 +962,21 @@ input.no-border[type=checkbox] {
     text-align: left;
 
     &-sm {
-      text-align: left;
+      @include small {
+        text-align: left;
+      }
     }
 
     &-md {
-      text-align: left;
+      @include medium {
+        text-align: left;
+      }
     }
 
     &-lg {
-      text-align: left;
+      @include large {
+        text-align: left;
+      }
     }
   }
 
@@ -932,15 +984,21 @@ input.no-border[type=checkbox] {
     text-align: right;
 
     &-sm {
-      text-align: right;
+      @include small {
+        text-align: right;
+      }
     }
 
     &-md {
-      text-align: right;
+      @include medium {
+        text-align: right;
+      }
     }
 
     &-lg {
-      text-align: right;
+      @include large {
+        text-align: right;
+      }
     }
   }
 
@@ -948,15 +1006,21 @@ input.no-border[type=checkbox] {
     text-align: justify;
 
     &-sm {
-      text-align: justify;
+      @include small {
+        text-align: justify;
+      }
     }
 
     &-md {
-      text-align: justify;
+      @include medium {
+        text-align: justify;
+      }
     }
 
     &-lg {
-      text-align: justify;
+      @include large {
+        text-align: justify;
+      }
     }
   }
 }
@@ -966,24 +1030,67 @@ input.no-border[type=checkbox] {
 }
 
 .border {
-  border-width: 1px;
-  border-color: var(--anu-primary-normal);
-  border-style: solid;
+  border-width: 1px solid var(--anu-primary-darker);
+
+  &-h {
+    border-left-style: solid;
+    border-right-style: solid;
+    border-left-width: 1px;
+    border-right-width: 1px;
+  }
+
+  &-v {
+    border-top-style: solid;
+    border-bottom-style: solid;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+  }
+
+  &-left {
+    border-left-style: solid;
+    border-left-width: 1px;
+  }
+
+  &-right {
+    border-right-style: solid;
+    border-right-width: 1px;
+  }
+
+  &-top {
+    border-top-style: solid;
+    border-top-width: 1px;
+  }
+
+  &-bottom {
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+  }
 
   &-thick {
+    border-style: solid;
     border-width: 2px;
   }
 
   &-thicker {
+    border-style: solid;
     border-width: 3px;
   }
 
   &-thickest {
+    border-style: solid;
     border-width: 5px;
   }
 
   &-round {
     border-radius: var(--anu-border-radius);
+
+    &-half {
+      border-radius: calc(var(--anu-border-radius) / 2);
+    }
+
+    &-double {
+      border-radius: calc(var(--anu-border-radius) * 2);
+    }
   }
 
   &-primary {
@@ -993,7 +1100,6 @@ input.no-border[type=checkbox] {
   &-secondary {
     border-color: var(--anu-secondary-normal);
   }
-
 }
 
 .overflow {
@@ -1024,5 +1130,4 @@ input.no-border[type=checkbox] {
       overflow: auto;
     }
   }
-
 }

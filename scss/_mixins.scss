@@ -11,9 +11,9 @@ $menu-z-index: 1000;
 $aside-nav-z-index: 900;
 $menu-modal: 9000;
 $opacity: 0.92;
-$checkbox_size: 1.5rem;
-$md-spacing: calc(var(--anu-spacing)/3);
-$sm-sapcing: calc(var(--anu-spacing)/4);
+$checkbox_size: 1rem;
+$md-spacing: calc(var(--anu-spacing) / 3);
+$sm-sapcing: calc(var(--anu-spacing) / 4);
 
 @mixin large {
   @media screen and (min-width: #{$large-breakpoint}) {
@@ -34,7 +34,7 @@ $sm-sapcing: calc(var(--anu-spacing)/4);
 }
 
 @function boxSize($i) {
-  @return calc($i * 100%/12);
+  @return calc($i * 100% / 12);
 }
 
 @mixin row {
@@ -117,7 +117,22 @@ $sm-sapcing: calc(var(--anu-spacing)/4);
 // Gradient mixin
 @mixin gradient($grad-color, $angle: 0deg, $lighten: 10%) {
   background: $grad-color;
-  background: -moz-linear-gradient($angle, $grad-color 0%, color-mix(in srgb, $grad-color, #fff $lighten) 51%, $grad-color 100%);
-  background: -webkit-linear-gradient($angle, $grad-color 0%, color-mix(in srgb, $grad-color, #fff $lighten) 51%, $grad-color 100%);
-  background: linear-gradient($angle, $grad-color 0%, color-mix(in srgb, $grad-color, #fff $lighten) 51%, $grad-color 100%);
+  background: -moz-linear-gradient(
+    $angle,
+    $grad-color 0%,
+    color-mix(in srgb, $grad-color, #fff $lighten) 51%,
+    $grad-color 100%
+  );
+  background: -webkit-linear-gradient(
+    $angle,
+    $grad-color 0%,
+    color-mix(in srgb, $grad-color, #fff $lighten) 51%,
+    $grad-color 100%
+  );
+  background: linear-gradient(
+    $angle,
+    $grad-color 0%,
+    color-mix(in srgb, $grad-color, #fff $lighten) 51%,
+    $grad-color 100%
+  );
 }
