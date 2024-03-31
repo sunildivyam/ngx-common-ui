@@ -140,22 +140,22 @@ a {
   }
 
   @include large {
-    padding: 0.75rem 1rem;
+    padding: 0.1rem 0.7rem;
   }
 
   @include medium {
-    padding: 0.6rem 0.9rem;
+    padding: 0.1rem 0.5rem;
     font-size: 0.9rem;
   }
 
   @include small {
     display: block;
     width: 100%;
-    padding: 0.75rem;
+    padding: 0.1rem 0.3;
     font-size: 0.9rem;
 
     + .btn {
-      margin-top: 1rem;
+      margin-top: 0.7rem;
       margin-left: 0;
     }
   }
@@ -1042,7 +1042,7 @@ input[type='range'] {
 }
 
 .border {
-  border-width: 1px solid var(--anu-primary-darker);
+  border: 1px solid var(--anu-primary-darker);
 
   &-h {
     border-left-style: solid;
