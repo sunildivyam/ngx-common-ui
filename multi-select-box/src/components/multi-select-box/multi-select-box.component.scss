@@ -13,6 +13,11 @@
     text-align: left;
     cursor: pointer;
 
+    input {
+      margin-right: 0;
+      margin-left: 0.5rem;
+    }
+
     &.selected {
       border: 1px solid var(--anu-primary-darkest);
       font-weight: bold;

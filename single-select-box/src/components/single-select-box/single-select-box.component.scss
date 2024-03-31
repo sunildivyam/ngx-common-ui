@@ -1,0 +1,32 @@
+@import 'mixins';
+
+:host {
+  display: flex;
+  flex-direction: row;
+  flex-flow: wrap;
+  width: 100%;
+
+  .single-select-item {
+    width: auto;
+    border: 1px solid var(--anu-primary-normal);
+    font-weight: normal;
+    text-align: left;
+    cursor: pointer;
+
+    input {
+      margin-right: 0;
+      margin-left: 0.5rem;
+    }
+
+    &.selected {
+      border: 1px solid var(--anu-primary-darkest);
+      font-weight: bold;
+      color: var(--anu-accent-darkest);
+    }
+
+    &:hover {
+      border-color: var(--anu-primary-darkest);
+      color: var(--anu-accent-darkest);
+    }
+  }
+}

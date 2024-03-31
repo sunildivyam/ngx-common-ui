@@ -257,19 +257,28 @@ option {
   &:focus-visible {
     outline-color: var(--anu-primary-darker);
   }
+
+  &:read-only {
+    background-color: var(--anu-accent-deep-light);
+    border-color: var(--anu-accent-lightest);
+    outline-color: var(--anu-accent-lightest);
+  }
 }
 
 // Checkbox styling with border & with no border
-input[type='checkbox'] {
+input[type='checkbox'],
+input[type='radio'] {
+  margin-right: 1rem;
+
   &:before {
     position: relative;
     display: block;
     width: #{$checkbox_size};
     height: #{$checkbox_size};
     content: '';
-    background: var(--anu-primary-deep-light);
+    background: var(--anu-accent-deep-light);
     border: 1px solid var(--anu-primary-normal);
-    color: var(--anu-primary-normal);
+    color: var(--anu-accent-lightest);
     font-size: #{$checkbox_size};
   }
 
@@ -277,9 +286,9 @@ input[type='checkbox'] {
     position: relative;
     display: flex;
     flex-direction: column;
-    background: var(--anu-primary-deep-light);
+    background: var(--anu-accent-deep-light);
     border: 1px solid var(--anu-primary-normal);
-    color: var(--anu-primary-normal);
+    color: var(--anu-accent-lightest);
     width: #{$checkbox_size};
     height: #{$checkbox_size};
     top: #{$checkbox_size * -1.12};
@@ -290,7 +299,8 @@ input[type='checkbox'] {
   }
 
   &:checked:after {
-    background: var(--anu-primary-deep-light);
+    background: var(--anu-primary-darkest);
+    color: var(--anu-accent-deep-light);
     content: '\2713';
     font-size: #{$checkbox_size};
   }
@@ -307,12 +317,13 @@ input[type='checkbox'] {
 
   &:not(:disabled) {
     &:checked:hover:after {
-      background-color: var(--anu-primary-lighter);
+      background-color: var(--anu-primary-darkest);
     }
   }
 }
 
-input.no-border[type='checkbox'] {
+input.no-border[type='checkbox'],
+input.no-border[type='radio'] {
   &:before {
     border: none;
   }
@@ -321,7 +332,7 @@ input.no-border[type='checkbox'] {
     border: none;
     content: '\2713';
     font-size: #{$checkbox_size};
-    color: var(--anu-accent-light);
+    color: var(--anu-accent-lightest);
   }
 
   &:not(:disabled) {
@@ -332,6 +343,7 @@ input.no-border[type='checkbox'] {
 
   &:checked:after {
     color: var(--anu-primary-normal);
+    background-color: transparent;
     font-size: #{$checkbox_size};
   }
 }

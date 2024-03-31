@@ -1,0 +1,16 @@
+<ng-container *ngFor="let item of items">
+  <label
+    class="single-select-item row nowrap spacing-h spacing-around-half center"
+    [ngClass]="{
+      'selected shadow-half': selectedItem[keyField] === item[keyField]
+    }"
+  >
+    {{ item[labelField] }}
+    <input
+      class="no-border"
+      [name]="item[keyField]"
+      type="radio"
+      [checked]="selectedItem[keyField] === item[keyField]"
+      (change)="onChanged($event, item)"
+  /></label>
+</ng-container>
