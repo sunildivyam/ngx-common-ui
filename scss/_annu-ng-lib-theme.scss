@@ -140,18 +140,18 @@ a {
   }
 
   @include large {
-    padding: 0.1rem 0.7rem;
+    padding: 0.6rem 0.7rem;
   }
 
   @include medium {
-    padding: 0.1rem 0.5rem;
+    padding: 0.6rem 0.5rem;
     font-size: 0.9rem;
   }
 
   @include small {
     display: block;
     width: 100%;
-    padding: 0.1rem 0.3;
+    padding: 0.6rem 0.5rem;
     font-size: 0.9rem;
 
     + .btn {
