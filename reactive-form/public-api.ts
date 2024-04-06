@@ -3,6 +3,7 @@ export * from './src/reactive-form.module';
 
 // Components
 export * from './src/components/form-error/form-error.component';
+export * from './src/components/dynamic-form/dynamic-form.component';
 
 // Interfaces
 export * from './src/interfaces/form-error.interface';
