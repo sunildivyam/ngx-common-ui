@@ -1,198 +1,109 @@
 <form *ngIf="fg" (ngSubmit)="onSubmit($event)">
   <!-- Control tree Start -->
-  <ng-container
-    *ngTemplateOutlet="
+  <ng-container *ngTemplateOutlet="
       controlTree;
       context: { params: params, fcs: fcs, formgrp: fg }
-    "
-  ></ng-container>
+    "></ng-container>
   <!--  Control tree End  -->
 
   <div *ngIf="fg.invalid && submitTried" class="row center">
-    <label class="error"
-      >Form has errors, please recheck your form above.</label
-    >
+    <label class="error">Form has errors, please recheck your form above.</label>
   </div>
 
-  <div
-    *ngIf="enableSaveBtnLabel || enableCancelBtnLabel"
-    class="row center spacing-around-v"
-  >
-    <input
-      *ngIf="enableSaveBtnLabel"
-      type="submit"
-      class="btn primary"
-      (click)="onSubmit($event)"
-      [value]="saveBtnLabel"
-    />
-    <input
-      *ngIf="enableCancelBtnLabel"
-      type="button"
-      class="btn primary"
-      (click)="onCancel($event)"
-      [value]="cancelBtnLabel"
-    />
+  <div *ngIf="enableSaveBtn || enableCancelBtn" class="row center spacing-around-v">
+    <input *ngIf="enableSaveBtn" type="submit" class="btn primary" (click)="onSubmit($event)" [value]="saveBtnLabel" />
+    <input *ngIf="enableCancelBtn" type="button" class="btn primary" (click)="onCancel($event)"
+      [value]="cancelBtnLabel" />
   </div>
 </form>
 <anu-spinner [show]="loading"></anu-spinner>
 
 <!-- Template for Parameters (controls) -->
-<ng-template
-  #controlTree
-  let-params="params"
-  let-fcs="fcs"
-  let-formgrp="formgrp"
->
+<ng-template #controlTree let-params="params" let-fcs="fcs" let-formgrp="formgrp">
   <ng-container [formGroup]="formgrp">
     <ng-container *ngFor="let ctrCfg of params | objectToArray">
       <div *ngIf="!ctrCfg.value.hidden" class="row spacing-around-v relative">
-        <label
-          *ngIf="
+        <label *ngIf="
             !(
               ctrCfg.value.controlType === 'checkbox' &&
               !ctrCfg.value.list?.length
             )
-          "
-          [for]="ctrCfg.key"
-          >{{ ctrCfg.value.label || '' }}
+          " [for]="ctrCfg.key">{{ ctrCfg.value.label || '' }}
           <small *ngIf="ctrCfg.value.helpText">{{
             ctrCfg.value.helpText
-          }}</small></label
-        >
+            }}</small></label>
 
         <!-- controltype = select -->
         <ng-container *ngIf="ctrCfg.value.controlType === 'select'">
           <div class="row nowrap">
-            <select
-              [id]="ctrCfg.key"
-              [formControlName]="ctrCfg.key"
-              [value]="fcs[ctrCfg.key].value"
-            >
-              <option
-                *ngFor="let lItem of ctrCfg.value.list"
-                [value]="lItem.key"
-              >
+            <select [id]="ctrCfg.key" [formControlName]="ctrCfg.key" [value]="fcs[ctrCfg.key].value">
+              <option *ngFor="let lItem of ctrCfg.value.list" [value]="lItem.key">
                 {{ lItem.value }}
               </option>
             </select>
-            <a
-              class="primary-darkest spacing-around-h"
-              *ngIf="ctrCfg.value.actionBtn"
-              href="#"
-              (click)="onActionBtn($event, ctrCfg.key, fcs[ctrCfg.key])"
-              >{{ ctrCfg.value.actionBtn }}</a
-            >
+            <a class="primary-darkest spacing-around-h" *ngIf="ctrCfg.value.actionBtn" href="#"
+              (click)="onActionBtn($event, ctrCfg.key, fcs[ctrCfg.key])">{{ ctrCfg.value.actionBtn }}</a>
           </div>
         </ng-container>
 
         <!-- Checkboxes -->
-        <ng-container
-          *ngIf="
+        <ng-container *ngIf="
             ctrCfg.value.controlType === 'checkbox' && ctrCfg.value.list?.length
-          "
-        >
+          ">
           <div class="row nowrap">
             <div class="row">
               <label [for]="chBox.key" *ngFor="let chBox of ctrCfg.value.list">
-                <input
-                  [id]="chBox.key"
-                  [name]="chBox.key"
-                  [type]="ctrCfg.value.controlType"
-                  [formArrayName]="ctrCfg.key"
-                  [checked]="fcs[ctrCfg.key]?.value?.includes(chBox.key)"
-                  [value]="chBox.key"
-                  (click)="checkBoxesChange($event, fcs[ctrCfg.key])"
-                />
-                {{ chBox.value }}</label
-              >
+                <input [id]="chBox.key" [name]="chBox.key" [type]="ctrCfg.value.controlType"
+                  [formArrayName]="ctrCfg.key" [checked]="fcs[ctrCfg.key]?.value?.includes(chBox.key)"
+                  [value]="chBox.key" (click)="checkBoxesChange($event, fcs[ctrCfg.key])" />
+                {{ chBox.value }}</label>
             </div>
-            <a
-              class="primary-darkest spacing-around-h"
-              *ngIf="ctrCfg.value.actionBtn"
-              href="#"
-              (click)="onActionBtn($event, ctrCfg.key, fcs[ctrCfg.key])"
-              >{{ ctrCfg.value.actionBtn }}</a
-            >
+            <a class="primary-darkest spacing-around-h" *ngIf="ctrCfg.value.actionBtn" href="#"
+              (click)="onActionBtn($event, ctrCfg.key, fcs[ctrCfg.key])">{{ ctrCfg.value.actionBtn }}</a>
           </div>
         </ng-container>
 
         <!-- Single Checkbox -->
-        <ng-container
-          *ngIf="
+        <ng-container *ngIf="
             ctrCfg.value.controlType === 'checkbox' &&
             !ctrCfg.value.list?.length
-          "
-        >
+          ">
           <div class="row nowrap">
             <label [for]="ctrCfg.key">
-              <input
-                [id]="ctrCfg.key"
-                [type]="ctrCfg.value.controlType"
-                [formControlName]="ctrCfg.key"
-                [checked]="fcs[ctrCfg.key].value"
-                [value]="ctrCfg.value.value"
-                (click)="checkBoxChange($event, fcs[ctrCfg.key])"
-              />
-              {{ ctrCfg.value.label || '' }}</label
-            >
-            <a
-              class="primary-darkest spacing-around-h"
-              *ngIf="ctrCfg.value.actionBtn"
-              href="#"
-              (click)="onActionBtn($event, ctrCfg.key, fcs[ctrCfg.key])"
-              >{{ ctrCfg.value.actionBtn }}</a
-            >
+              <input [id]="ctrCfg.key" [type]="ctrCfg.value.controlType" [formControlName]="ctrCfg.key"
+                [checked]="fcs[ctrCfg.key].value" [value]="ctrCfg.value.value"
+                (click)="checkBoxChange($event, fcs[ctrCfg.key])" />
+              {{ ctrCfg.value.label || '' }}</label>
+            <a class="primary-darkest spacing-around-h" *ngIf="ctrCfg.value.actionBtn" href="#"
+              (click)="onActionBtn($event, ctrCfg.key, fcs[ctrCfg.key])">{{ ctrCfg.value.actionBtn }}</a>
           </div>
         </ng-container>
 
         <!-- Radio Buttons -->
-        <ng-container
-          *ngIf="
+        <ng-container *ngIf="
             ctrCfg.value.controlType === 'radio' && ctrCfg.value.list?.length
-          "
-        >
+          ">
           <div class="row nowrap">
             <div class="row">
               <label [for]="rdBox.key" *ngFor="let rdBox of ctrCfg.value.list">
-                <input
-                  [id]="rdBox.key"
-                  [name]="ctrCfg.key"
-                  [type]="ctrCfg.value.controlType"
-                  [formControlName]="ctrCfg.key"
-                  [checked]="fcs[ctrCfg.key].value === rdBox.key"
-                  [value]="rdBox.key"
+                <input [id]="rdBox.key" [name]="ctrCfg.key" [type]="ctrCfg.value.controlType"
+                  [formControlName]="ctrCfg.key" [checked]="fcs[ctrCfg.key].value === rdBox.key" [value]="rdBox.key"
                   (click)="
                     fcs[ctrCfg.key].setValue(rdBox.key, { emitEvent: false })
-                  "
-                />
-                {{ rdBox.value }}</label
-              >
+                  " />
+                {{ rdBox.value }}</label>
             </div>
-            <a
-              class="primary-darkest spacing-around-h"
-              *ngIf="ctrCfg.value.actionBtn"
-              href="#"
-              (click)="onActionBtn($event, ctrCfg.key, fcs[ctrCfg.key])"
-              >{{ ctrCfg.value.actionBtn }}</a
-            >
+            <a class="primary-darkest spacing-around-h" *ngIf="ctrCfg.value.actionBtn" href="#"
+              (click)="onActionBtn($event, ctrCfg.key, fcs[ctrCfg.key])">{{ ctrCfg.value.actionBtn }}</a>
           </div>
         </ng-container>
 
         <ng-container *ngIf="ctrCfg.value.controlType === 'textarea'">
           <div class="row nowrap">
-            <textarea
-              rows="3"
-              [id]="ctrCfg.key"
-              [formControlName]="ctrCfg.key"
-              [placeholder]="ctrCfg.value.placeholder || ''"
-            ></textarea>
-            <a
-              class="primary-darkest spacing-around-h"
-              *ngIf="ctrCfg.value.actionBtn"
-              href="#"
-              (click)="onActionBtn($event, ctrCfg.key, fcs[ctrCfg.key])"
-              >{{ ctrCfg.value.actionBtn }}</a
-            >
+            <textarea rows="3" [id]="ctrCfg.key" [formControlName]="ctrCfg.key"
+              [placeholder]="ctrCfg.value.placeholder || ''"></textarea>
+            <a class="primary-darkest spacing-around-h" *ngIf="ctrCfg.value.actionBtn" href="#"
+              (click)="onActionBtn($event, ctrCfg.key, fcs[ctrCfg.key])">{{ ctrCfg.value.actionBtn }}</a>
           </div>
         </ng-container>
 
@@ -202,31 +113,25 @@
 
           <!-- Collapsible group -->
           <div class="spacing-around-v">
-            <anu-collapsible
-              [collapsed]="false"
-              [hamBurgerClassNames]="[
+            <anu-collapsible [collapsed]="false" [hamBurgerClassNames]="[
                 'size-sm',
                 'secondary-light-grad-h',
                 ' spacing-half'
-              ]"
-              [isDropdownStyle]="true"
-            >
+              ]" [isDropdownStyle]="true">
               <anu-collapsible-header>
                 <strong>{{ ctrCfg.value.label }}</strong>
               </anu-collapsible-header>
               <anu-collapsible-content>
                 <!-- COLAP -->
                 <div class="row">
-                  <ng-container
-                    *ngTemplateOutlet="
+                  <ng-container *ngTemplateOutlet="
                       controlTree;
                       context: {
                         params: ctrCfg.value.params,
                         fcs: fcs[ctrCfg.key].controls,
                         formgrp: fcs[ctrCfg.key].groupControl
                       }
-                    "
-                  ></ng-container>
+                    "></ng-container>
                 </div>
               </anu-collapsible-content>
             </anu-collapsible>
@@ -236,43 +141,25 @@
         </ng-container>
 
         <!-- All Others -->
-        <ng-container
-          *ngIf="
+        <ng-container *ngIf="
             ['text', 'date', 'number', 'range', 'email', 'password'].includes(
               ctrCfg.value.controlType
             )
-          "
-        >
+          ">
           <div class="row nowrap">
-            <input
-              [id]="ctrCfg.key"
-              [type]="ctrCfg.value.controlType"
-              [formControlName]="ctrCfg.key"
-              [placeholder]="ctrCfg.value.placeholder || ''"
-            />
-            <a
-              class="primary-darkest spacing-around-h"
-              *ngIf="ctrCfg.value.actionBtn"
-              href="#"
-              (click)="onActionBtn($event, ctrCfg.key, fcs[ctrCfg.key])"
-              >{{ ctrCfg.value.actionBtn }}</a
-            >
+            <input [id]="ctrCfg.key" [type]="ctrCfg.value.controlType" [formControlName]="ctrCfg.key"
+              [placeholder]="ctrCfg.value.placeholder || ''" />
+            <a class="primary-darkest spacing-around-h" *ngIf="ctrCfg.value.actionBtn" href="#"
+              (click)="onActionBtn($event, ctrCfg.key, fcs[ctrCfg.key])">{{ ctrCfg.value.actionBtn }}</a>
           </div>
         </ng-container>
 
-        <anu-form-error
-          *ngIf="
+        <anu-form-error *ngIf="
             fcs[ctrCfg.key].invalid &&
             (fcs[ctrCfg.key].touched || fcs[ctrCfg.key].dirty)
-          "
-          [errors]="fcs[ctrCfg.key].errors"
-          class="container"
-        >
+          " [errors]="fcs[ctrCfg.key].errors" class="container">
         </anu-form-error>
-        <anu-spinner
-          [show]="fcs[ctrCfg.key].pending"
-          speed="fast"
-        ></anu-spinner>
+        <anu-spinner [show]="fcs[ctrCfg.key].pending" speed="fast"></anu-spinner>
       </div>
     </ng-container>
   </ng-container>

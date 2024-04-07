@@ -1,0 +1,26 @@
+<label class="shadow spacing spacing-around-v">Categories tree</label>
+<!-- Control tree Start -->
+<ng-container *ngTemplateOutlet="
+          tree;
+          context: { level: 1, cats: getNextCats(1) }
+        "></ng-container>
+<!--  Control tree End  -->
+
+
+<ng-template #tree let-level="level" let-cats="cats">
+    <div class="spacing-around-h" *ngFor="let cat of cats">
+        <span class="spacing-h" *ngIf="level === levels">{{cat.title}}</span>
+
+        <anu-collapsible *ngIf="level < levels" [collapsed]="true" [hamBurgerClassNames]="['size-sm']"
+            [isDropdownStyle]="false">
+            <anu-collapsible-header>{{cat.title}}</anu-collapsible-header>
+            <anu-collapsible-content class="spacing-h">
+                <ng-container *ngTemplateOutlet="
+                                      tree;
+                                      context: { level: level + 1, cats: getNextCats(level +1, cat) }
+                                    "></ng-container>
+            </anu-collapsible-content>
+        </anu-collapsible>
+
+    </div>
+</ng-template>

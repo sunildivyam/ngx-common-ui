@@ -1,0 +1,34 @@
+<anu-tabs [activeTab]="currentTab" [tabs]="tabs" [fullWidth]="true" (changed)="onTabChange($event)"></anu-tabs>
+<div class="row relative">
+    <ng-container *ngFor="let tab of tabs">
+        <div *ngIf="currentTab?.name == tab.name" class="row primary-deep-light-bg">
+            <!-- List -->
+            <div class="row spacing-around">
+                <label for="{{'catlist' + tab.name}}">Choose L{{tab.name}} category</label>
+                <div class="row nowrap">
+                    <select id="{{'catlist' + tab.name}}" [value]="currentCat[tab.name]?.id || ''"
+                        (change)="onCatListChange($event, tab.name)">
+                        <option value="">Choose...</option>
+                        <option *ngFor="let cat of cats[tab.name]" [value]="cat.id">{{cat.title}}</option>
+                    </select>
+                    <div>
+                        <div class="row nowrap">
+                            <a class="spacing-h shadow" href="" (click)="onReload($event)">Reload</a> |
+                            <a class="spacing-h shadow" href="" (click)="onAdd($event, tab.name)">Add</a> |
+                            <a class="spacing-h shadow" href="" (click)="onDelete($event, tab.name)">Delete</a>
+                        </div>
+                    </div>
+                </div>
+                <div *ngIf="warning" class="row warning">{{warning}}</div>
+            </div>
+
+            <!-- Form -->
+            <div *ngIf="currentCat[tab.name]" class="row spacing-around-v accent-deep-light-bg">
+                <anu-dynamic-form class="container shadow spacing" [params]="params[currentTab?.name]"
+                    [value]="currentCat[currentTab?.name]" [saveBtnLabel]="'Save Category'" [enableCancelBtn]="false"
+                    (submitClicked)="onSave($event, tab.name)"></anu-dynamic-form>
+            </div>
+        </div>
+    </ng-container>
+    <anu-spinner [show]="loading"></anu-spinner>
+</div>

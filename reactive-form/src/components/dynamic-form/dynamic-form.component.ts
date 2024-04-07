@@ -40,12 +40,12 @@ export class DynamicFormComponent implements OnInit, OnChanges {
   /**
    * Enable Save Button, if false, then a form can act as form group.
    */
-  @Input() enableSaveBtnLabel: boolean = true;
+  @Input() enableSaveBtn: boolean = true;
 
   /**
    * Enable Cancel Button, if false, then a form can act as form group.
    */
-  @Input() enableCancelBtnLabel: boolean = true;
+  @Input() enableCancelBtn: boolean = true;
 
   /**
    * Emit form value, when submit button is clicked.
