@@ -1,4 +1,12 @@
-import { Component, OnInit, Input, Output, EventEmitter, OnChanges, SimpleChanges } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  Input,
+  Output,
+  EventEmitter,
+  OnChanges,
+  SimpleChanges
+} from '@angular/core';
 import { Tab } from '../../interfaces/tabs.interface';
 
 @Component({
@@ -17,17 +25,17 @@ export class TabsComponent implements OnInit, OnChanges {
 
   @Output() changed = new EventEmitter<Tab>();
 
-  constructor() { }
+  constructor() {}
 
   private setActiveTab(selectedTab: Tab | null) {
-    this.tabs.forEach(tab => {
+    this.tabs.forEach((tab) => {
       if (selectedTab && tab.name === selectedTab.name) {
         tab.active = true;
         this.changed.emit(tab);
       } else {
         tab.active = false;
       }
-    })
+    });
   }
 
   ngOnInit(): void {
@@ -39,7 +47,7 @@ export class TabsComponent implements OnInit, OnChanges {
   }
 
   public tabClicked(event: any, selectedTab: Tab): void {
-    event.preventDefault();
+    !selectedTab.href && event.preventDefault();
     this.setActiveTab(selectedTab);
   }
 }

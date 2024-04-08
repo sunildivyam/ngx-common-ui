@@ -1,6 +1,7 @@
 export interface Tab {
-    name: string;
-    title: string;
-    disabled?: boolean;
-    active?: boolean;
+  name: string;
+  title: string;
+  disabled?: boolean;
+  active?: boolean;
+  href?: string;
 }
