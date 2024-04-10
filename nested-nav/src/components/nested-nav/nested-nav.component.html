@@ -1,14 +1,85 @@
-<nav role="navigation" class="row" aria-label="navigation">
-    <ng-container *ngTemplateOutlet="navitem; context:{items: items}"></ng-container>
+<nav role="navigation" class="row stretch" aria-label="navigation">
+    <!-- Left Section -->
+    <div class="section logo">
+        <div class="row nowrap">
+            <a [routerLink]="['/']">
+                <img [src]="logoUrl" />
+            </a>
+        </div>
+    </div>
+
+    <!-- Middle Section -->
+    <div class="section">
+        <div class="row nowrap">
+            <div>
+                <!-- For mobile it is empty. You can add any for mobile only here -->
+            </div>
+
+
+            <!-- Non- Mobile -->
+            <div (mouseenter)="navClosed = false" class="columns-container  border-bottom spacing-around-h hidden-sm"
+                *ngFor="let item of items">
+                <a (click)="onNavClick($event, item)" class="level-1 spacing-h-half" [routerLink]="item.href || []"
+                    [title]="item.title">
+                    {{item.title}}
+                </a>
+                <div class="relative">
+                    <div [ngClass]="{'full-width-items middle': fullWidthItems, 'nav-closed': navClosed}"
+                        class="columns spacing accent-lightest-grad-h" *ngIf="item.children?.length">
+                        <div class="columns-content">
+                            <ng-container
+                                *ngTemplateOutlet="navitem; context:{items: item.children, level: 2}"></ng-container>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Right Section -->
+    <div class="section">
+        <div class="row nowrap right">
+            <ng-content></ng-content>
+            <anu-hamburger heading="" class="hidden-lg hidden-md size-md" [opened]="opened"
+                (changed)="toggleOpen($event)"></anu-hamburger>
+        </div>
+    </div>
+
+    <div class="row">
+        <!-- Mobile - only -->
+        <ng-container *ngIf="opened">
+            <div (mouseenter)="navClosed = false"
+                class="row center columns-container border-bottom spacing-around-h hidden-md hidden-lg  accent-lightest-grad-h"
+                *ngFor="let item of items">
+                <a (click)="onMobileNavClick($event, item)" class="level-1 spacing-h-half"
+                    [routerLink]="item.href || []" [title]="item.title">
+                    {{item.title}}
+                </a>
+                <div class="relative">
+                    <div [ngClass]="{'full-width-items middle': fullWidthItems, 'nav-closed': navClosed}"
+                        class="columns accent-lightest-grad-h" *ngIf="item.children?.length">
+                        <div class="columns-content spacing-around ">
+                            <ng-container
+                                *ngTemplateOutlet="navitem; context:{items: item.children, level: 2}"></ng-container>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </ng-container>
+
+    </div>
+
 </nav>
 
-<ng-template #navitem let-items="items">
-    <div class="" *ngFor="let item of items">
-        <a class="" [routerLink]="item.href || []" [title]="item.title">
+<!-- Nav Item Template for nested tree -->
+<ng-template #navitem let-items="items" let-level="level">
+    <ng-container *ngFor="let item of items">
+        <a (click)="onNavClick($event, item)" [ngClass]="'level-' + level" class="spacing-around-h"
+            [routerLink]="item.href || []" [title]="item.title">
             {{item.title}}
         </a>
-        <ng-container *ngIf="item.children?.length">
-            <ng-container *ngTemplateOutlet="navitem; context:{items: item.children}"></ng-container>
-        </ng-container>
-    </div>
+        <div class="spacing-h" *ngIf="item.children?.length">
+            <ng-container *ngTemplateOutlet="navitem; context:{items: item.children, level: level +1}"></ng-container>
+        </div>
+    </ng-container>
 </ng-template>

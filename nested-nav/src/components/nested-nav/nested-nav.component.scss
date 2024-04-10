@@ -1,0 +1,100 @@
+@import 'mixins';
+
+:host {
+  top: 0;
+  z-index: #{$menu-z-index};
+
+  a {
+    line-height: 3;
+  }
+
+  .columns {
+    display: flex;
+    position: absolute;
+    transform-origin: top center;
+    max-height: 0;
+    transform: scaleY(0);
+    overflow: hidden;
+    z-index: 1;
+    width: max-content;
+    transition: max-height, transform 0.2s cubic-bezier(1, 0, 0.98, 0.51);
+
+    @include small {
+      position: static;
+    }
+
+    &.full-width-items {
+      position: fixed;
+      left: 0;
+      width: 100%;
+
+      @include small {
+        position: static;
+
+        a {
+          text-align: center;
+        }
+      }
+    }
+
+    &-content {
+      column-count: 3;
+      column-rule: solid 1px var(--anu-primary-normal);
+      column-gap: 1rem;
+
+      @include small {
+        column-count: 2;
+      }
+
+      @include medium {
+        column-count: 3;
+      }
+
+      @include large {
+        column-count: 5;
+      }
+
+      a {
+        display: block;
+      }
+    }
+
+    &-container {
+      display: flex;
+      flex-direction: column;
+
+      &:hover {
+        border-color: var(--anu-secondary-deep-light);
+
+        .columns {
+          max-height: 9000px;
+          transform: scaleY(1);
+          margin-top: 1px;
+
+          &.nav-closed {
+            max-height: 0;
+            transform: scaleY(0);
+          }
+        }
+      }
+    }
+  }
+
+  .level {
+    &-2 {
+      color: var(--anu-primary-deep-dark);
+    }
+
+    &-3 {
+      // todo
+    }
+
+    &-4 {
+      // todo
+    }
+
+    &-5 {
+      // todo
+    }
+  }
+}
