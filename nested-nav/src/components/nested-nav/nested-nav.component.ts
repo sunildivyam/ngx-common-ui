@@ -23,7 +23,7 @@ import { DOCUMENT } from '@angular/common';
 export class NestedNavComponent implements AfterViewInit, OnChanges {
   @Input() items: Array<NestedNavItem> = [];
   @Input() fullWidthItems: boolean = true;
-  @Input() fixed: boolean = true;
+  @Input() fixed: boolean = false;
   @Input() logoUrl: string = '';
   @Output() navClicked = new EventEmitter<NestedNavItem>();
 

@@ -40,7 +40,7 @@ export class MenuComponent implements OnInit, AfterViewInit, OnChanges {
     'border-left',
     'primary-darker-border'
   ];
-  @Input() fixed: boolean = true;
+  @Input() fixed: boolean = false;
 
   @Output() selected = new EventEmitter<MenuItem>();
   @Output() openStatusChanged = new EventEmitter<boolean>();

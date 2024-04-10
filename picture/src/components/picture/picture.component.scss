@@ -1,0 +1,19 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  & > img {
+    width: 100%;
+  }
+
+  &.stretch > img {
+    height: 100%;
+    position: absolute;
+    z-index: -1;
+  }
+
+  anu-spinner {
+    z-index: 999;
+  }
+}

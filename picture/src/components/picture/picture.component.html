@@ -1,0 +1,16 @@
+<!-- Spinner loading -->
+<anu-spinner [show]="loading" [size]="'sm'"></anu-spinner>
+
+<!-- Main Image -->
+<img *ngIf="!failed && !defFailed" [loading]="isLazy ? 'lazy': 'eager'" [src]="srcUrl" [alt]="alt"
+    (load)="onImgLoad($event)" (error)="onImgError($event)" />
+
+<!-- Default Image -->
+<img *ngIf="defaultSrc && !defFailed && failed" [src]="defaultSrcUrl" [alt]="alt" (load)="onDefImgLoad($event)"
+    (error)="onDefImgError($event)" />
+
+<!-- Error Message -->
+<span *ngIf="defFailed || (failed && !defFailed && !defaultSrcUrl) || (failed && !defaultSrcUrl)" class="error">Error
+</span>
+<!-- Content Projection -->
+<ng-content></ng-content>
