@@ -1,0 +1,13 @@
+<a [ngClass]="{'disabled': disabled}" class="row nowrap center middle spacing-half-v spacing--h relative"
+    [href]="href || '#'" (click)="onClick($event)">
+    <span *ngIf="iconUrl" class="smart-btn-icon">
+        <img [src]="iconUrl" />
+    </span>
+    <span *ngIf="label" class="smart-btn-label">
+        {{label}}
+    </span>
+    <ng-container *ngIf="!label">
+        <ng-content></ng-content>
+    </ng-container>
+    <anu-spinner [show]="loading" [size]="'sm'"></anu-spinner>
+</a>
