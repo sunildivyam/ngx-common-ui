@@ -46,6 +46,8 @@ export class PictureComponent implements OnInit, OnChanges {
         const ds = this.defaultSrcUrl;
         this.defaultSrcUrl = '';
         this.defaultSrcUrl = ds;
+      } else {
+        this.defFailed = false;
       }
 
       this.loading = true;
@@ -65,7 +67,11 @@ export class PictureComponent implements OnInit, OnChanges {
 
   public onImgError(event: any) {
     this.failed = true;
-    this.loading = false;
+    if (this.defaultSrcUrl) {
+      this.loading = true;
+    } else {
+      this.loading = false;
+    }
   }
 
   public onDefImgLoad(event: any) {
