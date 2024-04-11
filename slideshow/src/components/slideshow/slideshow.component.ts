@@ -76,12 +76,20 @@ export class SlideshowComponent
 
   @HostListener('mouseenter', ['$event'])
   onMouseenter(event) {
-    this.stopAutoSlide();
+    if (!this.autoSlide && this.duration) {
+      this.startAutoSlide();
+    } else {
+      this.stopAutoSlide();
+    }
   }
 
   @HostListener('mouseleave', ['$event'])
   onMouseleave(event) {
-    this.startAutoSlide();
+    if (!this.autoSlide && this.duration) {
+      this.stopAutoSlide();
+    } else {
+      this.startAutoSlide();
+    }
   }
 
   ngOnInit(): void {}
@@ -89,12 +97,14 @@ export class SlideshowComponent
   ngAfterContentInit(): void {
     this.setSlideShowWidth();
 
-    this.startAutoSlide();
+    this.autoSlide ? this.startAutoSlide() : this.stopAutoSlide();
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    this.setSlideShowWidth();
-    this.startAutoSlide();
+    setTimeout(() => {
+      this.setSlideShowWidth();
+      this.autoSlide ? this.startAutoSlide() : this.stopAutoSlide();
+    }, 100);
   }
 
   ngOnDestroy(): void {
@@ -114,7 +124,7 @@ export class SlideshowComponent
     this.stopAutoSlide();
 
     if (isPlatformBrowser(this.platformId)) {
-      if (!this.duration || !this.autoSlide) return;
+      if (!this.duration) return;
 
       this.interval$ = setInterval(() => {
         // Slide

@@ -1,0 +1,16 @@
+<anu-slideshow [ngClass]="slideSectionClassNames" [autoSlide]="autoSlide" [duration]="duration">
+    <div class="row nowrap">
+        <div class="slideshow_item container" *ngFor="let item of items">
+            <a *ngIf="item.href" [href]="item.href" (click)="onBannerClick($event, item)">
+                <anu-picture class="container" [src]="item.src"></anu-picture>
+            </a>
+            <anu-picture class="container" *ngIf="!item.href" [src]="item.src"
+                (click)="onBannerClick($event, item)"></anu-picture>
+        </div>
+    </div>
+</anu-slideshow>
+<div [ngClass]="contentSectionClassNames">
+    <ng-content>
+
+    </ng-content>
+</div>
