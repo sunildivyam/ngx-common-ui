@@ -76,13 +76,11 @@ export class SlideshowComponent
 
   @HostListener('mouseenter', ['$event'])
   onMouseenter(event) {
-    console.log('Enter');
     this.stopAutoSlide();
   }
 
   @HostListener('mouseleave', ['$event'])
   onMouseleave(event) {
-    console.log('Out');
     this.startAutoSlide();
   }
 
@@ -133,7 +131,7 @@ export class SlideshowComponent
     if (!this.contentEl || !nodes || !nodes.length || !nodes.forEach) return;
 
     const slideshowVieportWidth = this.contentEl.clientWidth;
-    console.log(slideshowVieportWidth);
+    this.items = [];
 
     nodes?.forEach((item) => {
       if (
