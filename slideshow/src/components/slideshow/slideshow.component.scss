@@ -5,6 +5,14 @@
   position: relative;
   flex-direction: row;
 
+  &:hover {
+    .slide-controls,
+    .next,
+    .prev {
+      display: flex;
+    }
+  }
+
   .slideshow {
     &_content {
       display: flex;
@@ -30,22 +38,15 @@
         white-space: nowrap;
         width: auto;
       }
-
-      &:hover {
-        .slide-controls,
-        .next,
-        .prev {
-          display: absolute;
-        }
-      }
     }
   }
 
   // Slide Controls
 
   .slide-controls {
+    display: none;
     cursor: pointer;
-    position: none;
+    position: absolute;
     bottom: 0;
     margin-left: auto;
     margin-right: auto;
@@ -91,8 +92,8 @@
   .prev,
   .next {
     cursor: pointer;
-    position: none;
-    display: flex;
+    position: absolute;
+    display: none;
     flex-direction: column;
     justify-content: center;
     padding: 0.5rem;
