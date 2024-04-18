@@ -7,6 +7,8 @@ import { UtilsModule } from '@annuadvent/ngx-core/utils';
 import { SpinnerModule } from '@annuadvent/ngx-common-ui/spinner';
 import { CategoriesTreeComponent } from './components/categories-tree/categories-tree.component';
 import { CollapsibleModule } from '@annuadvent/ngx-common-ui/collapsible';
+import { PictureModule } from '@annuadvent/ngx-common-ui/picture';
+import { HelpersCategoriesModule } from '@annuadvent/ngx-core/helpers-categories';
 
 @NgModule({
   declarations: [ManageCategoriesComponent, CategoriesTreeComponent],
@@ -16,7 +18,9 @@ import { CollapsibleModule } from '@annuadvent/ngx-common-ui/collapsible';
     ReactiveFormModule,
     UtilsModule,
     SpinnerModule,
-    CollapsibleModule
+    CollapsibleModule,
+    PictureModule,
+    HelpersCategoriesModule
   ],
   exports: [ManageCategoriesComponent, CategoriesTreeComponent]
 })

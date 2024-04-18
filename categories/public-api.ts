@@ -7,3 +7,5 @@ export * from './src/components/categories-tree/categories-tree.component';
 export * from './src/services/categories.service';
 
 export * from './src/constants/category-form-params.constant';
+
+export * from './src/interfaces/category-image-upload.interface';

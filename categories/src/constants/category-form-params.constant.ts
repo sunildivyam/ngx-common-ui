@@ -63,11 +63,32 @@ export const categoryParams = {
     helpText: '(Url)',
     syncValidators: [
       { name: 'trimSpacesValidator' },
-      { name: 'maxLength', params: [200] }
+      { name: 'maxLength', params: [500] }
     ],
     asyncValidators: [],
     list: [],
+    actionBtn: 'Change',
+    readonly: true,
     disabled: false
+  },
+  imageUrlImage: {
+    type: 'Object',
+    controlType: 'image',
+    value: null,
+    label: 'Upload category Image',
+    placeholder: 'Upload category Image',
+    helpText: '',
+    syncValidators: [],
+    asyncValidators: [
+      {
+        name: 'ImageValidatorService',
+        imageDimsName: 'categoryImageDimensions'
+      }
+    ],
+    list: [],
+    actionBtn: 'Upload',
+    disabled: false,
+    hidden: true
   },
   isLive: {
     type: 'boolean',

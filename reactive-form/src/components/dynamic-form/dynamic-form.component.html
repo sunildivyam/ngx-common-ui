@@ -100,7 +100,7 @@
 
         <ng-container *ngIf="ctrCfg.value.controlType === 'textarea'">
           <div class="row nowrap">
-            <textarea rows="3" [id]="ctrCfg.key" [formControlName]="ctrCfg.key"
+            <textarea rows="3" [id]="ctrCfg.key" [formControlName]="ctrCfg.key" [readOnly]="ctrCfg.value.readonly"
               [placeholder]="ctrCfg.value.placeholder || ''"></textarea>
             <a class="primary-darkest spacing-around-h" *ngIf="ctrCfg.value.actionBtn" href="#"
               (click)="onActionBtn($event, ctrCfg.key, fcs[ctrCfg.key])">{{ ctrCfg.value.actionBtn }}</a>
@@ -166,7 +166,7 @@
           ">
           <div class="row nowrap">
             <input [id]="ctrCfg.key" [type]="ctrCfg.value.controlType" [formControlName]="ctrCfg.key"
-              [placeholder]="ctrCfg.value.placeholder || ''" />
+              [readOnly]="ctrCfg.value.readonly" [placeholder]="ctrCfg.value.placeholder || ''" />
             <a class="primary-darkest spacing-around-h" *ngIf="ctrCfg.value.actionBtn" href="#"
               (click)="onActionBtn($event, ctrCfg.key, fcs[ctrCfg.key])">{{ ctrCfg.value.actionBtn }}</a>
           </div>

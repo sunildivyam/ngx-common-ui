@@ -12,6 +12,11 @@ import { UtilsService } from '@annuadvent/ngx-core/utils';
 import { CategoriesService } from '../../services/categories.service';
 import { categoryParams } from '../../constants/category-form-params.constant';
 import { Tab } from '@annuadvent/ngx-common-ui/tabs';
+import {
+  FormConfigParameter,
+  FormControlValue
+} from '@annuadvent/ngx-core/helpers-forms';
+import { CategoryImageUpload } from '../../interfaces/category-image-upload.interface';
 
 @Component({
   selector: 'anu-manage-categories',
@@ -27,6 +32,7 @@ export class ManageCategoriesComponent implements OnInit, OnChanges {
   @Output() addClicked = new EventEmitter<Category>();
   @Output() updateClicked = new EventEmitter<Category>();
   @Output() deleteClicked = new EventEmitter<Category>();
+  @Output() uploadImageClicked = new EventEmitter<CategoryImageUpload>();
 
   // variables
   tabs: Array<Tab> = [];
@@ -49,6 +55,16 @@ export class ManageCategoriesComponent implements OnInit, OnChanges {
 
   ngOnChanges(changes: SimpleChanges): void {
     changes.levels || (changes.value && this.init());
+  }
+
+  private toggleImageUpload(enable: boolean): void {
+    const imageUrlP: FormConfigParameter =
+      this.params[this.currentTab.name]['imageUrl'];
+    const imageUrlImageP: FormConfigParameter =
+      this.params[this.currentTab.name]['imageUrlImage'];
+    imageUrlP.hidden = !enable;
+    imageUrlImageP.hidden = true;
+    this.params[this.currentTab.name] = this.params[this.currentTab.name];
   }
 
   private init(): void {
@@ -91,8 +107,10 @@ export class ManageCategoriesComponent implements OnInit, OnChanges {
     this.currentCat[listId] = cat;
     if (cat) {
       this.isEditMode[listId] = true;
+      this.toggleImageUpload(true);
     } else {
       this.isEditMode[listId] = false;
+      this.toggleImageUpload(false);
     }
   }
 
@@ -107,12 +125,37 @@ export class ManageCategoriesComponent implements OnInit, OnChanges {
     }
   }
 
+  public onAction(formControlValue: FormControlValue, listId: string): void {
+    const { key, value, control } = formControlValue;
+    switch (key) {
+      case 'imageUrlImage':
+        control.markAsDirty();
+        if (this.isEditMode[listId] && control.valid && value) {
+          this.uploadImageClicked.emit({
+            category: this.currentCat[listId],
+            imageUpload: value
+          });
+        }
+        break;
+      case 'imageUrl':
+        // Show/hide Image Upload to change Image
+        this.params[listId]['imageUrlImage'].hidden =
+          !this.params[listId]['imageUrlImage'].hidden;
+        break;
+      case 'defaultAddressId':
+        // Show Address List and set default address
+        break;
+      default:
+    }
+  }
+
   public onAdd(event: any, listId: string): void {
     event.preventDefault();
     const previousLevelListId = parseInt(listId) - 1;
     if (listId === '1' || this.cats[previousLevelListId]?.length) {
       this.isEditMode[listId] = false;
       this.currentCat[listId] = new Category();
+      this.toggleImageUpload(false);
     } else {
       this.warning = `To add L-${listId} category, You must have one or more L-${previousLevelListId} categories. So add them first.`;
       setTimeout(() => (this.warning = ''), 5000);

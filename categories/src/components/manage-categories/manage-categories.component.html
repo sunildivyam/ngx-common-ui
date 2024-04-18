@@ -24,9 +24,18 @@
 
             <!-- Form -->
             <div *ngIf="currentCat[tab.name]" class="row spacing-around-v accent-deep-light-bg">
-                <anu-dynamic-form class="container shadow spacing" [params]="params[currentTab?.name]"
-                    [value]="currentCat[currentTab?.name]" [saveBtnLabel]="'Save Category'" [enableCancelBtn]="false"
-                    (submitClicked)="onSave($event, tab.name)"></anu-dynamic-form>
+                <div *ngIf="currentCat[currentTab?.name].imageUrl" class="col-sm-12 col-md-6 col-lg-4">
+                    <anu-picture
+                        [src]="currentCat[currentTab?.name].imageUrl | CategoryImageUrl:currentCat[currentTab?.name]"></anu-picture>
+                </div>
+                <div [ngClass]="currentCat[currentTab?.name].imageUrl ? 'col-sm-12 col-md-6 col-lg-8': 'col-12'">
+                    <anu-dynamic-form class="container shadow spacing" [params]="params[currentTab?.name]"
+                        [value]="currentCat[currentTab?.name]" [saveBtnLabel]="'Save Category'"
+                        [enableCancelBtn]="false" (submitClicked)="onSave($event, tab.name)"
+                        (actionBtnClicked)="onAction($event, tab.name)"></anu-dynamic-form>
+                </div>
+
+
             </div>
         </div>
     </ng-container>
