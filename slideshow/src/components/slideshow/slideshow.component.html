@@ -6,7 +6,7 @@
 <!-- Next and previous buttons -->
 <a *ngIf="items?.length > 1" class="prev" href="javascript:void(0)" (click)="scrollSlide(-1)">&#10094;</a>
 <a *ngIf="items?.length > 1" class="next" href="javascript:void(0)" (click)="scrollSlide(1)">&#10095;</a>
-<div *ngIf="items?.length > 1" class="row nowrap slide-controls center">
+<div *ngIf="items?.length > 1" class="row nowrap slide-controls center spacing-around-v">
     <a [ngClass]="{'active': index === activeSlide}" class="spacing-around-h-half"
         *ngFor="let item of items; let index = index" href="#" (click)="onSlideControlClick($event, index)">O</a>
 </div>

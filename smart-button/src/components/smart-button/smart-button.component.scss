@@ -2,8 +2,10 @@
   display: flex;
   border: 1px solid var(--anu-primary-normal);
 
-  a {
+  a,
+  a span {
     color: inherit;
+    font-size: 1em;
   }
 
   &:hover {

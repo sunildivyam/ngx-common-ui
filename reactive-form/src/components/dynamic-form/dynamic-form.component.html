@@ -140,9 +140,27 @@
           <!-- Group Control tree Start -->
         </ng-container>
 
+        <!-- Image File Upload -->
+        <ng-container *ngIf="
+                    ['image'].includes(
+                      ctrCfg.value.controlType
+                    )
+                  ">
+          <div class="row nowrap">
+            <!-- Image Upload component -->
+            <anu-image-upload [id]="ctrCfg.key" [placeholder]="ctrCfg.value.placeholder || ''"
+              [multiple]="ctrCfg.value.type === 'Array'" [enableUploadButton]="false"
+              (changed)="onImageChanged($event, fcs[ctrCfg.key])"></anu-image-upload>
+
+            <a class="primary-darkest spacing-around-h" *ngIf="ctrCfg.value.actionBtn" href="#"
+              (click)="onActionBtn($event, ctrCfg.key, fcs[ctrCfg.key])">{{ ctrCfg.value.actionBtn }}</a>
+            <anu-spinner [show]="fcs[ctrCfg.key].pending" speed="fast"></anu-spinner>
+          </div>
+        </ng-container>
+
         <!-- All Others -->
         <ng-container *ngIf="
-            ['text', 'date', 'number', 'range', 'email', 'password'].includes(
+            ['text', 'date', 'number', 'range', 'email', 'password', 'file'].includes(
               ctrCfg.value.controlType
             )
           ">

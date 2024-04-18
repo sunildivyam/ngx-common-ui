@@ -67,7 +67,7 @@ export class SlideshowComponent
   onResize(event) {
     if (!this.setTimeout$) {
       this.setTimeout$ = setTimeout(() => {
-        this.setSlideShowWidth();
+        this.refresh();
         clearTimeout(this.setTimeout$);
         this.setTimeout$ = null;
       }, 500);
@@ -95,14 +95,14 @@ export class SlideshowComponent
   ngOnInit(): void {}
 
   ngAfterContentInit(): void {
-    this.setSlideShowWidth();
+    this.refresh();
 
     this.autoSlide ? this.startAutoSlide() : this.stopAutoSlide();
   }
 
   ngOnChanges(changes: SimpleChanges): void {
     setTimeout(() => {
-      this.setSlideShowWidth();
+      this.refresh();
       this.autoSlide ? this.startAutoSlide() : this.stopAutoSlide();
     }, 100);
   }
@@ -133,7 +133,7 @@ export class SlideshowComponent
     }
   }
 
-  private setSlideShowWidth(): void {
+  public refresh(): void {
     this.el = this.elRef.nativeElement;
     this.contentEl = this.el?.querySelector('.slideshow_content') || null;
     const nodes = this.el?.querySelectorAll(`.${SLIDESHOW_ITEM_CLASS}`) || null;

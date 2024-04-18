@@ -7,6 +7,7 @@ import { DynamicFormComponent } from './components/dynamic-form/dynamic-form.com
 import { HelpersFormsModule } from '@annuadvent/ngx-core/helpers-forms';
 import { SpinnerModule } from '@annuadvent/ngx-common-ui/spinner';
 import { CollapsibleModule } from '@annuadvent/ngx-common-ui/collapsible';
+import { ImageUploadModule } from '@annuadvent/ngx-common-ui/image-upload';
 
 @NgModule({
   declarations: [FormErrorComponent, DynamicFormComponent],
@@ -16,7 +17,8 @@ import { CollapsibleModule } from '@annuadvent/ngx-common-ui/collapsible';
     UtilsModule,
     HelpersFormsModule,
     SpinnerModule,
-    CollapsibleModule
+    CollapsibleModule,
+    ImageUploadModule
   ],
   exports: [FormErrorComponent, DynamicFormComponent]
 })

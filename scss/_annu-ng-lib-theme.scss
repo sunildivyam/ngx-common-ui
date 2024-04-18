@@ -48,7 +48,7 @@ body {
   align-items: center;
   width: 100%;
 
-  & > * {
+  &>* {
     max-width: var(--anu-site-width);
   }
 }
@@ -135,7 +135,7 @@ a {
     pointer-events: none;
   }
 
-  + .btn {
+  +.btn {
     margin-left: 1rem;
   }
 
@@ -154,7 +154,7 @@ a {
     padding: 0.6rem 0.5rem;
     font-size: 0.9rem;
 
-    + .btn {
+    +.btn {
       margin-top: 0.7rem;
       margin-left: 0;
     }
@@ -940,7 +940,7 @@ input[type='range'] {
   }
 }
 
-:not(pre) > code,
+:not(pre)>code,
 .code {
   background-color: var(--anu-accent-darker);
   color: var(--anu-accent-deep-light);
@@ -1035,6 +1035,23 @@ input[type='range'] {
       @include large {
         text-align: justify;
       }
+    }
+  }
+
+  &-wrap {
+    text-wrap: balance;
+    word-wrap: break-word;
+  }
+
+  &-nowrap {
+    display: inline-block;
+    text-wrap: nowrap;
+
+    &-ellipses {
+      display: inline-block;
+      text-wrap: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
     }
   }
 }

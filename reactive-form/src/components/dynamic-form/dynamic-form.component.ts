@@ -9,8 +9,10 @@ import {
   SimpleChanges
 } from '@angular/core';
 import { AbstractControl, FormGroup, ValidationErrors } from '@angular/forms';
+import { ImageUpload } from '@annuadvent/ngx-common-ui/image-upload';
 import {
   FormConfigGroup,
+  FormConfigParameter,
   FormConfigService,
   FormControlValue
 } from '@annuadvent/ngx-core/helpers-forms';
@@ -114,12 +116,12 @@ export class DynamicFormComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    (changes.params && changes.value) ||
-      (changes.params &&
+    (changes?.params && changes?.value) ||
+      (changes?.params &&
         this.formConfigService.initForm(this.params, this.value));
 
-    changes.value &&
-      !changes.params &&
+    changes?.value &&
+      !changes?.params &&
       this.formConfigService.patchValue(this.value);
   }
 
@@ -182,5 +184,9 @@ export class DynamicFormComponent implements OnInit, OnChanges {
       value: control?.value,
       control
     } as FormControlValue);
+  }
+
+  public onImageChanged(imageUpload: any, control: AbstractControl): void {
+    setTimeout(() => control.setValue(imageUpload, { emitEvent: true }));
   }
 }

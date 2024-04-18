@@ -1,0 +1,31 @@
+<div class="col-sm-12 col-md-6 col-lg-6">
+    <anu-card class="border-round shadow spacing-half relative">
+        <anu-card-title>
+            <h3>Upload Image</h3>
+        </anu-card-title>
+        <anu-card-body>
+            <span *ngIf="helpText"><small>{{ helpText }}</small></span>
+            <div class="form-group container center">
+                <input [id]="id" #fileInput id="file" type="file" [accept]="accept" [multiple]="multiple" class=""
+                    (change)="onFileChange($event)" />
+                <input type="button" class="btn" (click)="chooseFileClick()" value="Choose file to upload..." />
+                <input readonly type="text" class="spacing-around-v-half" [value]="chosenFileNames"
+                    [placeholder]="placeholder" />
+                <a *ngIf="enableUploadButton" class="btn primary spacing-around-v-half"
+                    [attr.disabled]="imageUploadFiles?.length ? null : true" href="#" (click)="uploadFileClick($event)"
+                    title="Upload">Upload</a>
+            </div>
+        </anu-card-body>
+    </anu-card>
+</div>
+<div *ngIf="imageUploadFiles?.length" class="col-sm-12 col-md-6 col-lg-6 border spacing-v">
+    <anu-slideshow #previewSlides class="container" [autoSlide]="false"
+        [relativeItemWidth]="imageUploadFiles?.length === 1 ? 100 : 60">
+        <div class="row nowrap">
+            <anu-picture class="slideshow_item spacing-around-h" *ngFor="let imgFile of imageUploadFiles"
+                [src]="imgFile.previewUrl">
+                <small class="text-center text-wrap">{{imgFile.fileName}}</small>
+            </anu-picture>
+        </div>
+    </anu-slideshow>
+</div>
