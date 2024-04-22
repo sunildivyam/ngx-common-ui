@@ -116,9 +116,9 @@ export class DynamicFormComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    (changes?.params && changes?.value) ||
-      (changes?.params &&
-        this.formConfigService.initForm(this.params, this.value));
+    if (changes?.params || (changes?.params && changes?.value)) {
+      this.formConfigService.initForm(this.params, this.value);
+    }
 
     changes?.value &&
       !changes?.params &&
@@ -187,6 +187,10 @@ export class DynamicFormComponent implements OnInit, OnChanges {
   }
 
   public onImageChanged(imageUpload: any, control: AbstractControl): void {
-    setTimeout(() => control.setValue(imageUpload, { emitEvent: true }));
+    setTimeout(() => {
+      control.markAsDirty();
+      control.markAllAsTouched();
+      control.setValue(imageUpload, { emitEvent: true });
+    });
   }
 }

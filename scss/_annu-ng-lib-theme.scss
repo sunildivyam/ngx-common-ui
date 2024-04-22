@@ -129,10 +129,7 @@ a {
 
   &.disabled,
   &[disabled] {
-    color: var(--anu-accent-light);
-    background-color: var(--anu-accent-lighter);
-    border-color: var(--anu-accent-light);
-    pointer-events: none;
+    @include disabled();
   }
 
   +.btn {
@@ -247,9 +244,7 @@ input[type='email'],
 input[type='date'],
 input[type='datetime'],
 input[type='password'],
-textarea,
-select,
-option {
+textarea {
   display: block;
   width: 100%;
   padding: 1rem;
@@ -264,6 +259,19 @@ option {
     background-color: var(--anu-accent-deep-light);
     border-color: var(--anu-accent-lightest);
     outline-color: var(--anu-accent-lightest);
+  }
+}
+
+select,
+option {
+  display: block;
+  width: 100%;
+  padding: 1rem;
+  border: 1px solid var(--anu-primary-dark);
+  max-width: 100%;
+
+  &:focus-visible {
+    outline-color: var(--anu-primary-darker);
   }
 }
 
@@ -929,15 +937,7 @@ input[type='range'] {
 }
 
 .shadow {
-  box-shadow: 0.1rem 0.1rem 0.5rem 0.1rem var(--anu-secondary-normal);
-
-  &-half {
-    box-shadow: 0.05rem 0.05rem 0.5rem 0.05rem var(--anu-secondary-normal);
-  }
-
-  &-double {
-    box-shadow: 0.2rem 0.2rem 0.5rem 0.2rem var(--anu-secondary-normal);
-  }
+  @include shadow(var(--anu-secondary-normal));
 }
 
 :not(pre)>code,
@@ -1053,6 +1053,18 @@ input[type='range'] {
       text-overflow: ellipsis;
       overflow: hidden;
     }
+  }
+
+  &-strike {
+    text-decoration: line-through;
+  }
+
+  &-itallic {
+    font-style: italic;
+  }
+
+  &-bold {
+    font-weight: bold;
   }
 }
 

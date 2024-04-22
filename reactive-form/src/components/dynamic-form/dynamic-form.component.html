@@ -56,7 +56,7 @@
                 <input [id]="chBox.key" [name]="chBox.key" [type]="ctrCfg.value.controlType"
                   [formArrayName]="ctrCfg.key" [checked]="fcs[ctrCfg.key]?.value?.includes(chBox.key)"
                   [value]="chBox.key" (click)="checkBoxesChange($event, fcs[ctrCfg.key])" />
-                {{ chBox.value }}</label>
+                <span class="spacing-around-h">{{ chBox.value }}</span></label>
             </div>
             <a class="primary-darkest spacing-around-h" *ngIf="ctrCfg.value.actionBtn" href="#"
               (click)="onActionBtn($event, ctrCfg.key, fcs[ctrCfg.key])">{{ ctrCfg.value.actionBtn }}</a>
@@ -73,7 +73,7 @@
               <input [id]="ctrCfg.key" [type]="ctrCfg.value.controlType" [formControlName]="ctrCfg.key"
                 [checked]="fcs[ctrCfg.key].value" [value]="ctrCfg.value.value"
                 (click)="checkBoxChange($event, fcs[ctrCfg.key])" />
-              {{ ctrCfg.value.label || '' }}</label>
+              <span class="spacing-around-h">{{ ctrCfg.value.label || '' }}</span></label>
             <a class="primary-darkest spacing-around-h" *ngIf="ctrCfg.value.actionBtn" href="#"
               (click)="onActionBtn($event, ctrCfg.key, fcs[ctrCfg.key])">{{ ctrCfg.value.actionBtn }}</a>
           </div>
@@ -91,7 +91,7 @@
                   (click)="
                     fcs[ctrCfg.key].setValue(rdBox.key, { emitEvent: false })
                   " />
-                {{ rdBox.value }}</label>
+                <span class="spacing-around-h">{{ rdBox.value }}</span></label>
             </div>
             <a class="primary-darkest spacing-around-h" *ngIf="ctrCfg.value.actionBtn" href="#"
               (click)="onActionBtn($event, ctrCfg.key, fcs[ctrCfg.key])">{{ ctrCfg.value.actionBtn }}</a>

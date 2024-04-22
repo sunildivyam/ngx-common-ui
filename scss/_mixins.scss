@@ -117,22 +117,35 @@ $sm-sapcing: calc(var(--anu-spacing) / 4);
 // Gradient mixin
 @mixin gradient($grad-color, $angle: 0deg, $lighten: 10%) {
   background: $grad-color;
-  background: -moz-linear-gradient(
-    $angle,
-    $grad-color 0%,
-    color-mix(in srgb, $grad-color, #fff $lighten) 51%,
-    $grad-color 100%
-  );
-  background: -webkit-linear-gradient(
-    $angle,
-    $grad-color 0%,
-    color-mix(in srgb, $grad-color, #fff $lighten) 51%,
-    $grad-color 100%
-  );
-  background: linear-gradient(
-    $angle,
-    $grad-color 0%,
-    color-mix(in srgb, $grad-color, #fff $lighten) 51%,
-    $grad-color 100%
-  );
+  background: -moz-linear-gradient($angle,
+      $grad-color 0%,
+      color-mix(in srgb, $grad-color, #fff $lighten) 51%,
+      $grad-color 100%);
+  background: -webkit-linear-gradient($angle,
+      $grad-color 0%,
+      color-mix(in srgb, $grad-color, #fff $lighten) 51%,
+      $grad-color 100%);
+  background: linear-gradient($angle,
+      $grad-color 0%,
+      color-mix(in srgb, $grad-color, #fff $lighten) 51%,
+      $grad-color 100%);
+}
+
+@mixin shadow($shadow-color: var(--anu-secondary-normal)) {
+  box-shadow: 0.1rem 0.1rem 0.5rem 0.1rem $shadow-color;
+
+  &-half {
+    box-shadow: 0.05rem 0.05rem 0.5rem 0.05rem $shadow-color;
+  }
+
+  &-double {
+    box-shadow: 0.2rem 0.2rem 0.5rem 0.2rem $shadow-color;
+  }
+}
+
+@mixin disabled() {
+  color: var(--anu-accent-light);
+  background-color: var(--anu-accent-lighter);
+  border-color: var(--anu-accent-light);
+  pointer-events: none;
 }

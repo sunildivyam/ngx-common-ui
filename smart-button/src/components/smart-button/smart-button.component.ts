@@ -12,7 +12,7 @@ export class SmartButtonComponent {
   @Input() loading: boolean = false;
   @Input() disabled: boolean = false;
 
-  @Output() click = new EventEmitter<any>();
+  @Output() btnClick = new EventEmitter<any>();
 
   public onClick(event: any): void {
     if (
@@ -24,6 +24,6 @@ export class SmartButtonComponent {
       event.preventDefault();
     }
 
-    !this.loading && !this.disabled && this.click.emit();
+    !this.loading && !this.disabled && this.btnClick.emit();
   }
 }

@@ -9,7 +9,6 @@ import {
 } from '@angular/core';
 import { Category } from '@annuadvent/ngx-core/helpers-categories';
 import { UtilsService } from '@annuadvent/ngx-core/utils';
-import { CategoriesService } from '../../services/categories.service';
 import { categoryParams } from '../../constants/category-form-params.constant';
 import { Tab } from '@annuadvent/ngx-common-ui/tabs';
 import {
@@ -44,10 +43,7 @@ export class ManageCategoriesComponent implements OnInit, OnChanges {
   params = {};
   cats = {};
 
-  constructor(
-    private utilsService: UtilsService,
-    private catService: CategoriesService
-  ) {}
+  constructor(private utilsService: UtilsService) {}
 
   ngOnInit(): void {
     this.init();
@@ -55,6 +51,20 @@ export class ManageCategoriesComponent implements OnInit, OnChanges {
 
   ngOnChanges(changes: SimpleChanges): void {
     changes.levels || (changes.value && this.init());
+  }
+
+  private getTabs(count: number): Array<Tab> {
+    if (!count) count = 0;
+    const tabs = [];
+    for (let i = 0; i < count; i++) {
+      tabs.push({
+        name: `${i + 1}`,
+        title: `L${i + 1} categroies`,
+        active: i === 0 ? true : false
+      } as Tab);
+    }
+
+    return tabs;
   }
 
   private toggleImageUpload(enable: boolean): void {
@@ -68,7 +78,7 @@ export class ManageCategoriesComponent implements OnInit, OnChanges {
   }
 
   private init(): void {
-    this.tabs = this.catService.getTabs(this.levels);
+    this.tabs = this.getTabs(this.levels);
     if (!this.currentTab && this.tabs) this.currentTab = this.tabs[0];
     const cats = this.value || [];
 
