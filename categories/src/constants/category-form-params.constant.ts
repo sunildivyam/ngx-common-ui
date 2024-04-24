@@ -90,6 +90,42 @@ export const categoryParams = {
     disabled: false,
     hidden: true
   },
+  bannerUrl: {
+    type: 'string',
+    controlType: 'text',
+    value: '',
+    label: 'Banner Image',
+    placeholder: 'Banner Image',
+    helpText: '(Url)',
+    syncValidators: [
+      { name: 'trimSpacesValidator' },
+      { name: 'maxLength', params: [500] }
+    ],
+    asyncValidators: [],
+    list: [],
+    actionBtn: 'Change',
+    readonly: true,
+    disabled: false
+  },
+  bannerUrlImage: {
+    type: 'Object',
+    controlType: 'image',
+    value: null,
+    label: 'Upload Banner Image',
+    placeholder: 'Upload Banner Image',
+    helpText: '',
+    syncValidators: [],
+    asyncValidators: [
+      {
+        name: 'ImageValidatorService',
+        imageDimsName: 'bannerImageDimensions'
+      }
+    ],
+    list: [],
+    actionBtn: 'Upload',
+    disabled: false,
+    hidden: true
+  },
   isLive: {
     type: 'boolean',
     controlType: 'checkbox',

@@ -32,6 +32,7 @@ export class ManageCategoriesComponent implements OnInit, OnChanges {
   @Output() updateClicked = new EventEmitter<Category>();
   @Output() deleteClicked = new EventEmitter<Category>();
   @Output() uploadImageClicked = new EventEmitter<CategoryImageUpload>();
+  @Output() uploadBannerImageClicked = new EventEmitter<CategoryImageUpload>();
 
   // variables
   tabs: Array<Tab> = [];
@@ -72,8 +73,18 @@ export class ManageCategoriesComponent implements OnInit, OnChanges {
       this.params[this.currentTab.name]['imageUrl'];
     const imageUrlImageP: FormConfigParameter =
       this.params[this.currentTab.name]['imageUrlImage'];
+
+    const bannerUrlP: FormConfigParameter =
+      this.params[this.currentTab.name]['bannerUrl'];
+    const bannerUrlImageP: FormConfigParameter =
+      this.params[this.currentTab.name]['bannerUrlImage'];
+
+    bannerUrlP.hidden = !enable;
+    bannerUrlImageP.hidden = true;
+
     imageUrlP.hidden = !enable;
     imageUrlImageP.hidden = true;
+
     this.params[this.currentTab.name] = this.params[this.currentTab.name];
   }
 
@@ -152,8 +163,19 @@ export class ManageCategoriesComponent implements OnInit, OnChanges {
         this.params[listId]['imageUrlImage'].hidden =
           !this.params[listId]['imageUrlImage'].hidden;
         break;
-      case 'defaultAddressId':
-        // Show Address List and set default address
+      case 'bannerUrlImage':
+        control.markAsDirty();
+        if (this.isEditMode[listId] && control.valid && value) {
+          this.uploadBannerImageClicked.emit({
+            category: this.currentCat[listId],
+            imageUpload: value
+          });
+        }
+        break;
+      case 'bannerUrl':
+        // Show/hide Image Upload to change Image
+        this.params[listId]['bannerUrlImage'].hidden =
+          !this.params[listId]['bannerUrlImage'].hidden;
         break;
       default:
     }

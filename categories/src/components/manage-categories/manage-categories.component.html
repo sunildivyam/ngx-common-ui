@@ -23,6 +23,10 @@
             </div>
 
             <!-- Form -->
+            <div class="row" *ngIf="currentCat[currentTab?.name]?.bannerUrl">
+                <anu-picture
+                    [src]="currentCat[currentTab?.name]?.bannerUrl | CategoryImageUrl:currentCat[currentTab?.name]"></anu-picture>
+            </div>
             <div *ngIf="currentCat[tab.name]" class="row spacing-around-v accent-deep-light-bg">
                 <div *ngIf="currentCat[currentTab?.name].imageUrl" class="col-sm-12 col-md-6 col-lg-4">
                     <anu-picture

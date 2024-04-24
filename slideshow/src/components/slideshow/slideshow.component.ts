@@ -43,7 +43,7 @@ export class SlideshowComponent
   /**
    * slide duration in miliseconds. Next slide wil show up after this duration.
    */
-  @Input() duration: number = 5000;
+  @Input() duration: number = 2000;
 
   /**
    * enables auto scrolling based on duration.
