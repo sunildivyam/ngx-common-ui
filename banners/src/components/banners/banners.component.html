@@ -1,4 +1,4 @@
-<anu-slideshow [ngClass]="slideSectionClassNames" [autoSlide]="autoSlide" [duration]="duration">
+<anu-slideshow #banner [ngClass]="slideSectionClassNames" [autoSlide]="autoSlide" [duration]="duration">
     <div class="row nowrap">
         <div class="slideshow_item container" *ngFor="let item of items">
             <a *ngIf="item.href" [href]="item.href" (click)="onBannerClick($event, item)">

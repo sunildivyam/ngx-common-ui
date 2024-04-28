@@ -114,7 +114,7 @@ export class ImageUploadComponent implements OnInit, OnChanges {
     // Refresh Image Prview
     setTimeout(() => {
       this.previewSlides.refresh();
-    }, 100);
+    }, 1000);
   }
 
   public chooseFileClick(): void {
