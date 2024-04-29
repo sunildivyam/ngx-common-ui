@@ -1,0 +1,3 @@
+// Export all exposable angular assets from ./src folder, like components, services, pipes, directives etc.
+export * from './src/icons.module';
+export * from './src/constants/icons.constant';
